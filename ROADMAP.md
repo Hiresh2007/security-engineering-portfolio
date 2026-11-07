@@ -11,7 +11,7 @@ Phase 1: core analysis (v0.1)
 - [x] Directional flow summary, top talkers, text/JSON report
 - [x] TCP vertical scan and horizontal sweep detection (T1046) with tests
 - [x] CI workflow (ruff + pytest, Python 3.10-3.13)
-- [ ] Publish repo to GitHub and confirm CI is green
+- [x] Publish repo to GitHub and confirm CI is green
 - [ ] Record real Nmap scans against a local VM / Docker target and validate the detector on them
 
 Phase 2: more detectors (v0.2)
@@ -44,4 +44,4 @@ Phase 3: usability (v0.3)
 
 - [x] Tracking files: PROJECT_STATE.md, ROADMAP.md, DEVELOPMENT_LOG.md, LEARNING/, journal/
 - [x] Dashboard generated from tracking files and git history
-- [ ] Publish repo and enable GitHub Pages deployment
+- [x] Publish repo and enable GitHub Pages deployment

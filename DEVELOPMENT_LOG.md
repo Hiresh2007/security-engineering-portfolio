@@ -15,5 +15,5 @@ Newest first. Each entry links to its journal file.
   builder `scripts/build_dashboard.py` (6 tests), Pages workflow.
 - **Tests:** pcap-triage 26/26 passed; portfolio 6/6 passed; ruff clean in both.
   CI not run: repos not yet on GitHub.
-- **Blocked:** push / PR / Pages, because `gh` is not authenticated and public repo
-  creation needs approval.
+- **Published (with approval):** both repos public; pcap-triage CI green on
+  3.10–3.13; dashboard deployed to https://hiresh2007.github.io/security-engineering-portfolio/

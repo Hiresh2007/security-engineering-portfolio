@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-07T07:34:29+00:00",
+  "generated_at": "2026-11-07T08:08:07+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
     "sessions": 1,
-    "commits": 1,
+    "commits": 8,
     "concepts": 10,
-    "milestones_done": 6,
+    "milestones_done": 8,
     "milestones_total": 25
   },
   "projects": [
@@ -34,7 +34,7 @@
       "commit_count": 1,
       "commit_source": "local git",
       "last_commit": "2026-11-07T11:28:00+04:00",
-      "roadmap_done": 4,
+      "roadmap_done": 5,
       "roadmap_total": 15
     },
     {
@@ -75,9 +75,9 @@
         "Markdown"
       ],
       "url": "https://github.com/Hiresh2007/Cybersecurity-Journey",
-      "commit_count": 0,
-      "commit_source": "unavailable",
-      "last_commit": null,
+      "commit_count": 5,
+      "commit_source": "GitHub API",
+      "last_commit": "2026-08-11T15:47:44Z",
       "roadmap_done": 0,
       "roadmap_total": 2
     },
@@ -97,10 +97,10 @@
         "GitHub Pages"
       ],
       "url": "https://github.com/Hiresh2007/security-engineering-portfolio",
-      "commit_count": 0,
+      "commit_count": 2,
       "commit_source": "local git",
-      "last_commit": null,
-      "roadmap_done": 2,
+      "last_commit": "2026-11-07T11:49:16+04:00",
+      "roadmap_done": 3,
       "roadmap_total": 3
     }
   ],
@@ -114,11 +114,39 @@
   ],
   "commits_per_day": [
     {
-      "date": "2026-11-07",
+      "date": "2026-07-15",
+      "count": 3
+    },
+    {
+      "date": "2026-08-10",
       "count": 1
+    },
+    {
+      "date": "2026-08-11",
+      "count": 1
+    },
+    {
+      "date": "2026-11-07",
+      "count": 3
     }
   ],
   "recent_commits": [
+    {
+      "sha": "bfeb7781d4675ae22f77e3f5178e98753ceb23d4",
+      "short": "bfeb778",
+      "date": "2026-11-07T11:49:16+04:00",
+      "subject": "Record publishing results for session 1",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/bfeb7781d4675ae22f77e3f5178e98753ceb23d4"
+    },
+    {
+      "sha": "24290b41096cfe4d834ee88eeee7c60c8411a7a3",
+      "short": "24290b4",
+      "date": "2026-11-07T11:34:29+04:00",
+      "subject": "Set up portfolio tracking system and dashboard",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/24290b41096cfe4d834ee88eeee7c60c8411a7a3"
+    },
     {
       "sha": "0ca25010893450a7a71224bc06385294efb5a4d3",
       "short": "0ca2501",
@@ -126,6 +154,46 @@
       "subject": "Add PCAP reader, flow summary and TCP port-scan detection",
       "project": "pcap-triage",
       "url": "https://github.com/Hiresh2007/pcap-triage/commit/0ca25010893450a7a71224bc06385294efb5a4d3"
+    },
+    {
+      "sha": "939580648835d60cecedb6e941305a59c4835723",
+      "short": "9395806",
+      "date": "2026-08-11T15:47:44Z",
+      "subject": "Update day 4 note tone and add day 5 notes",
+      "project": "Cybersecurity-Journey",
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/939580648835d60cecedb6e941305a59c4835723"
+    },
+    {
+      "sha": "898b1a986b9cf3d703cc551989c5c9896b80e08c",
+      "short": "898b1a9",
+      "date": "2026-08-10T10:35:47Z",
+      "subject": "Update notes",
+      "project": "Cybersecurity-Journey",
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/898b1a986b9cf3d703cc551989c5c9896b80e08c"
+    },
+    {
+      "sha": "31c78cad73f9d07c3baa6c57ff864b4777ae9839",
+      "short": "31c78ca",
+      "date": "2026-07-15T06:19:57Z",
+      "subject": "Update README with project overview",
+      "project": "Cybersecurity-Journey",
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/31c78cad73f9d07c3baa6c57ff864b4777ae9839"
+    },
+    {
+      "sha": "02aea95a3a1cd897760cd570475ea08991774dc8",
+      "short": "02aea95",
+      "date": "2026-07-15T06:17:45Z",
+      "subject": "Add day 1 and 2 notes",
+      "project": "Cybersecurity-Journey",
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/02aea95a3a1cd897760cd570475ea08991774dc8"
+    },
+    {
+      "sha": "2918e1ce84e5311e06b24d9f7dfd028a07cf8db5",
+      "short": "2918e1c",
+      "date": "2026-07-15T05:38:13Z",
+      "subject": "Initial commit",
+      "project": "Cybersecurity-Journey",
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/2918e1ce84e5311e06b24d9f7dfd028a07cf8db5"
     }
   ],
   "learning": [
@@ -278,19 +346,23 @@
       "text": "CI workflow (ruff + pytest, Python 3.10-3.13)"
     },
     {
+      "project": "pcap-triage",
+      "text": "Publish repo to GitHub and confirm CI is green"
+    },
+    {
       "project": "security-engineering-portfolio",
       "text": "Tracking files: PROJECT_STATE.md, ROADMAP.md, DEVELOPMENT_LOG.md, LEARNING/, journal/"
     },
     {
       "project": "security-engineering-portfolio",
       "text": "Dashboard generated from tracking files and git history"
+    },
+    {
+      "project": "security-engineering-portfolio",
+      "text": "Publish repo and enable GitHub Pages deployment"
     }
   ],
   "upcoming": [
-    {
-      "project": "pcap-triage",
-      "text": "Publish repo to GitHub and confirm CI is green"
-    },
     {
       "project": "pcap-triage",
       "text": "Record real Nmap scans against a local VM / Docker target and validate the detector on them"
@@ -298,6 +370,10 @@
     {
       "project": "pcap-triage",
       "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "Beaconing detector: low-jitter periodic connections (T1071)"
     },
     {
       "project": "SigmaHQ/sigma",
@@ -318,10 +394,6 @@
     {
       "project": "Cybersecurity-Journey",
       "text": "Add a writeups/ folder for completed TryHackMe/HTB rooms (profile README links to writeups that do not exist yet)"
-    },
-    {
-      "project": "security-engineering-portfolio",
-      "text": "Publish repo and enable GitHub Pages deployment"
     }
   ],
   "discoveries": [
@@ -345,7 +417,7 @@
       "passed": 26,
       "failed": 0,
       "lint": "pass",
-      "ci": "not run (repo not yet on GitHub)"
+      "ci": "pass (GitHub Actions, Python 3.10-3.13)"
     }
   ]
 }

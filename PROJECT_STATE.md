@@ -6,10 +6,10 @@ _Last updated: 2026-11-07 (session 1)_
 
 | Project | Role | Stage | Repo status |
 |---|---|---|---|
-| pcap-triage | Flagship (original) | v0.1: reader, flows, port-scan detection | Local only, 1 commit on `main` (`0ca2501`) |
+| pcap-triage | Flagship (original) | v0.1: reader, flows, port-scan detection | [Public](https://github.com/Hiresh2007/pcap-triage), `main` @ `0ca2501`, CI green |
 | SigmaHQ/sigma | Open-source contribution | Selected; fork not created | n/a |
 | Cybersecurity-Journey | Supporting (user's notes) | Days 1–5 of notes | On GitHub, unchanged |
-| security-engineering-portfolio | Tracking + dashboard | Set up | Local only |
+| security-engineering-portfolio | Tracking + dashboard | Live at https://hiresh2007.github.io/security-engineering-portfolio/ | [Public](https://github.com/Hiresh2007/security-engineering-portfolio), Pages deploy green |
 
 ## Last completed tasks
 
@@ -19,8 +19,8 @@ _Last updated: 2026-11-07 (session 1)_
 
 ## Branches
 
-- pcap-triage: `main` (local)
-- security-engineering-portfolio: `main` (local)
+- pcap-triage: `main`
+- security-engineering-portfolio: `main`, `session-1-publish` (PR: state updates after publishing)
 
 ## Open pull requests
 
@@ -28,17 +28,12 @@ None.
 
 ## Blockers
 
-1. **`gh` CLI not authenticated.** Cannot create repos, push, open PRs or read
-   private repos. Fix: run `gh auth login`.
-2. **Public repo creation needs approval** for `pcap-triage` and
-   `security-engineering-portfolio`.
-3. GitHub Pages must be enabled (Settings → Pages → Source: GitHub Actions)
-   after the portfolio repo is pushed.
-4. No Docker on this machine; WSL is present. Needed later for lab targets.
+- No Docker on this machine; WSL is present. Needed later for lab targets.
+- Resolved 2026-11-07: `gh` authenticated (scopes repo, workflow, read:org, gist);
+  both repos published with Hiresh's approval; Pages enabled.
 
 ## Pending work
 
-- Push both repos, confirm CI, enable Pages
 - Validate scan detector on real Nmap traffic from a local VM
 - DNS anomaly detector (pcap-triage v0.2)
 - Sigma: fork + local test setup
