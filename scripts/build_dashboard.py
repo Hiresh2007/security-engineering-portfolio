@@ -171,9 +171,23 @@ def collect_commits(project: dict[str, Any], offline: bool) -> tuple[list[dict],
 # --- assembly ---------------------------------------------------------------
 
 
+JOURNAL_NAME = re.compile(r"^(\d{4}-\d{2}-\d{2})(?:-(\d+))?\.md$")
+
+
 def load_journal(journal_dir: Path) -> list[dict[str, Any]]:
+    """Read session front matter in chronological order.
+
+    Files are YYYY-MM-DD.md, plus YYYY-MM-DD-2.md, -3.md ... for further
+    sessions on the same day. Sorted by (date, session number), because plain
+    string order would put "-2.md" before ".md".
+    """
+    entries = []
+    for path in journal_dir.iterdir():
+        m = JOURNAL_NAME.match(path.name)
+        if m:
+            entries.append(((m.group(1), int(m.group(2) or 1)), path))
     sessions = []
-    for path in sorted(journal_dir.glob("????-??-??.md")):
+    for _, path in sorted(entries):
         meta = parse_front_matter(path.read_text(encoding="utf-8"))
         if not meta:
             continue

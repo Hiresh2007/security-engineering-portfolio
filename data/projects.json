@@ -6,12 +6,22 @@
       "id": "pcap-triage",
       "name": "pcap-triage",
       "role": "Flagship",
-      "summary": "Offline PCAP triage: flow summaries and explainable detections (port scans; DNS, beaconing and ARP detectors planned).",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling and DGA activity.",
       "repo": "Hiresh2007/pcap-triage",
       "local_path": "../pcap-triage",
-      "stage": "v0.1 in development",
-      "areas": ["Network Traffic Analysis", "Intrusion Detection", "SOC Engineering"],
-      "stack": ["Python", "Scapy", "pytest", "ruff", "GitHub Actions"]
+      "stage": "v0.2 in review",
+      "areas": [
+        "Network Traffic Analysis",
+        "Intrusion Detection",
+        "SOC Engineering"
+      ],
+      "stack": [
+        "Python",
+        "Scapy",
+        "pytest",
+        "ruff",
+        "GitHub Actions"
+      ]
     },
     {
       "id": "sigma",
@@ -22,8 +32,16 @@
       "fork": "Hiresh2007/sigma",
       "local_path": "../sigma",
       "stage": "Selected, not started",
-      "areas": ["Detection Engineering", "SOC Engineering"],
-      "stack": ["Sigma", "YAML", "sigma-cli", "Python"]
+      "areas": [
+        "Detection Engineering",
+        "SOC Engineering"
+      ],
+      "stack": [
+        "Sigma",
+        "YAML",
+        "sigma-cli",
+        "Python"
+      ]
     },
     {
       "id": "cybersecurity-journey",
@@ -33,8 +51,12 @@
       "repo": "Hiresh2007/Cybersecurity-Journey",
       "local_path": "../Cybersecurity-Journey",
       "stage": "Ongoing notes (days 1-5)",
-      "areas": ["Fundamentals"],
-      "stack": ["Markdown"]
+      "areas": [
+        "Fundamentals"
+      ],
+      "stack": [
+        "Markdown"
+      ]
     },
     {
       "id": "portfolio",
@@ -44,8 +66,14 @@
       "repo": "Hiresh2007/security-engineering-portfolio",
       "local_path": ".",
       "stage": "Set up",
-      "areas": ["Documentation"],
-      "stack": ["Python", "HTML/CSS/JS", "GitHub Pages"]
+      "areas": [
+        "Documentation"
+      ],
+      "stack": [
+        "Python",
+        "HTML/CSS/JS",
+        "GitHub Pages"
+      ]
     }
   ]
 }
