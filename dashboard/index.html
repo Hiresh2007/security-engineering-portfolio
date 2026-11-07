@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hiresh | Cybersecurity Engineering</title>
+<meta name="description" content="Engineering log and project dashboard of Hiresh Yadav, built from real git history and tracking files.">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0f0f0e;
+    --surface-1: #1a1a19;
+    --surface-2: #222220;
+    --border: #2c2c29;
+    --ink-1: #ededea;
+    --ink-2: #b4b3ad;
+    --ink-3: #85847e;
+    --accent: #3987e5;
+    --accent-soft: rgba(57, 135, 229, .14);
+    --good: #0ca30c;
+    --critical: #d03b3b;
+    --warning: #fab219;
+    --grid: #2c2c29;
+    --radius: 12px;
+    --sans: ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink-1);
+    font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--ink-3); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header { border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 5;
+           background: rgba(15,15,14,.86); backdrop-filter: blur(10px); }
+  header .wrap { display: flex; align-items: center; gap: 24px; height: 56px; }
+  .brand { font-weight: 600; letter-spacing: -.01em; white-space: nowrap; }
+  .brand span { color: var(--ink-3); font-weight: 400; }
+  nav { display: flex; gap: 18px; min-width: 0; overflow-x: auto; scrollbar-width: none; font-size: 13px; }
+  nav a { color: var(--ink-3); text-decoration: none; white-space: nowrap; }
+  nav a:hover { color: var(--ink-1); }
+
+  .hero { padding: 56px 0 32px; }
+  .hero h1 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 12px; font-weight: 600; }
+  .hero p { color: var(--ink-2); max-width: 680px; margin: 0; }
+  .meta { color: var(--ink-3); font: 12px var(--mono); margin-top: 16px; }
+
+  section { padding: 28px 0; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3);
+       font-weight: 500; margin: 0 0 16px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .grid { display: grid; gap: 16px; }
+  .g4 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  .g2 { grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); }
+
+  .stat .value { font-size: 32px; font-weight: 600; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+  .stat .label { color: var(--ink-3); font-size: 13px; }
+
+  .project { display: flex; flex-direction: column; gap: 10px; transition: border-color .2s, transform .2s; }
+  .project:hover { border-color: #3a3a36; transform: translateY(-2px); }
+  .project .top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 12px; }
+  .project h3 { min-width: 0; overflow-wrap: anywhere; }
+  .project h3 { margin: 0; font-size: 17px; font-weight: 600; }
+  .role { font-size: 12px; color: var(--accent); background: var(--accent-soft); padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+  .project p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .project .foot { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--ink-3); font: 12px var(--mono); margin-top: auto; }
+  .progress { height: 4px; background: var(--surface-2); border-radius: 2px; overflow: hidden; }
+  .progress i { display: block; height: 100%; background: var(--accent); border-radius: 2px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { border: 1px solid var(--border); background: var(--surface-1); border-radius: 999px;
+          padding: 4px 12px; font-size: 13px; color: var(--ink-2); }
+  .chip small { color: var(--ink-3); margin-left: 6px; }
+
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list li { display: flex; gap: 14px; padding: 10px 0; border-top: 1px solid var(--border); font-size: 14px; }
+  .list li:first-child { border-top: 0; padding-top: 0; }
+  .list .k { color: var(--ink-3); font: 12px/22px var(--mono); white-space: nowrap; min-width: 92px; }
+  .list .v { color: var(--ink-2); }
+  .list .v strong { color: var(--ink-1); font-weight: 500; }
+  .list.stacked li { flex-direction: column; gap: 2px; }
+  .list.stacked .k { min-width: 0; line-height: 18px; }
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (max-width: 760px) { .projects-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; color: var(--ink-3); font-weight: 500; font-size: 12px; padding: 0 12px 10px 0; border-bottom: 1px solid var(--border); }
+  td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--border); color: var(--ink-2); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  td.mono { font: 12px var(--mono); color: var(--ink-3); white-space: nowrap; }
+  .scroll { overflow-x: auto; }
+
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-1); }
+  .status svg { width: 14px; height: 14px; flex: none; }
+
+  .chart-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 12px; }
+  .chart-head .t { font-size: 14px; color: var(--ink-1); }
+  .chart-head .s { font-size: 12px; color: var(--ink-3); }
+  .toggle { background: none; border: 1px solid var(--border); color: var(--ink-2); border-radius: 8px;
+            padding: 4px 10px; font: 12px var(--sans); cursor: pointer; }
+  .toggle:hover { color: var(--ink-1); border-color: #3a3a36; }
+  .chart { position: relative; }
+  .chart svg { display: block; width: 100%; height: 180px; overflow: visible; }
+  .chart .axis { fill: var(--ink-3); font: 11px var(--mono); }
+  .chart .gridline { stroke: var(--grid); stroke-width: 1; }
+  .chart .bar { fill: var(--accent); }
+  .chart .hit { fill: transparent; cursor: default; }
+  .chart .hit:hover + .bar, .chart .bar.active { fill: #5b9ded; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface-2); border: 1px solid var(--border);
+         border-radius: 8px; padding: 6px 10px; font-size: 12px; color: var(--ink-1); white-space: nowrap;
+         transform: translate(-50%, -110%); opacity: 0; transition: opacity .12s; }
+  .tip b { font-weight: 600; }
+  .empty { color: var(--ink-3); font-size: 14px; }
+
+  footer { border-top: 1px solid var(--border); margin-top: 32px; padding: 24px 0 48px; color: var(--ink-3); font-size: 13px; }
+
+  .fade { opacity: 0; transform: translateY(6px); animation: in .5s ease forwards; }
+  @keyframes in { to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .fade { animation: none; opacity: 1; transform: none; } .project { transition: none; } }
+  @media (max-width: 640px) { .brand span { display: none; } .hero { padding-top: 36px; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Hiresh <span>| Cybersecurity Engineering</span></div>
+    <nav aria-label="Sections">
+      <a href="#overview">Overview</a><a href="#projects">Projects</a><a href="#activity">Activity</a>
+      <a href="#updates">Updates</a><a href="#learning">Learning</a><a href="#stack">Stack</a>
+      <a href="#milestones">Milestones</a><a href="#research">Research</a><a href="#testing">Testing</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero fade">
+    <h1>Cybersecurity engineering log</h1>
+    <p>Network traffic analysis, detection engineering and security automation projects.
+       Every number on this page is generated from git history and the tracking files in
+       <a href="https://github.com/Hiresh2007/security-engineering-portfolio">security-engineering-portfolio</a>.</p>
+    <div class="meta" id="generated"></div>
+  </div>
+
+  <section id="overview"><h2>Overview</h2><div class="grid g4" id="stats"></div></section>
+  <section id="projects"><h2>Active projects</h2><div class="grid projects-grid" id="project-cards"></div></section>
+
+  <section id="activity">
+    <h2>Daily engineering activity</h2>
+    <div class="grid g2">
+      <div class="card">
+        <div class="chart-head">
+          <div><div class="t">Commits per day</div><div class="s">All tracked repositories, last 30 days</div></div>
+          <button class="toggle" id="chart-toggle" aria-pressed="false">Table</button>
+        </div>
+        <div class="chart" id="chart"></div>
+        <div class="scroll" id="chart-table" hidden></div>
+      </div>
+      <div class="card"><div class="chart-head"><div class="t">Sessions</div></div><ul class="list" id="sessions"></ul></div>
+    </div>
+  </section>
+
+  <section id="updates"><h2>Latest GitHub updates</h2><div class="card"><ul class="list" id="commits"></ul></div></section>
+
+  <section id="learning">
+    <h2>Learning tracker</h2>
+    <div class="card scroll"><table id="learning-table"><thead><tr><th>Concept</th><th>Area</th><th>Introduced</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section id="stack"><h2>Technical stack</h2><div class="chips" id="stack-chips"></div></section>
+
+  <section id="milestones">
+    <div class="grid g2">
+      <div><h2>Completed milestones</h2><div class="card"><ul class="list stacked" id="done"></ul></div></div>
+      <div><h2>Upcoming tasks</h2><div class="card"><ul class="list stacked" id="todo"></ul></div></div>
+    </div>
+  </section>
+
+  <section id="research"><h2>Research and discoveries</h2><div class="card"><ul class="list" id="discoveries"></ul></div></section>
+
+  <section id="testing">
+    <h2>Project testing status</h2>
+    <div class="card scroll"><table id="testing-table"><thead><tr><th>Project</th><th>Last run</th><th>Tests</th><th>Lint</th><th>CI</th></tr></thead><tbody></tbody></table></div>
+  </section>
+</main>
+
+<footer><div class="wrap">Data: <code>dashboard/data.json</code>, built by <code>scripts/build_dashboard.py</code>. No metrics are entered by hand.</div></footer>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const day = (iso) => (iso || "").slice(0, 10);
+  const ICON = {
+    good: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#0ca30c"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    critical: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="7" fill="#d03b3b"/><path d="M5.5 5.5l5 5m0-5l-5 5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    none: '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.2" fill="none" stroke="#85847e" stroke-width="1.6"/><path d="M5 8h6" stroke="#85847e" stroke-width="1.6" stroke-linecap="round"/></svg>',
+  };
+  const status = (kind, label) => `<span class="status">${ICON[kind]}${esc(label)}</span>`;
+  const list = (el, items, render, empty) => {
+    el.innerHTML = items.length ? items.map(render).join("") : `<li class="empty">${esc(empty)}</li>`;
+  };
+
+  function stats(d) {
+    const o = d.overview;
+    const tiles = [
+      [o.projects, "tracked projects"],
+      [o.sessions, "recorded sessions"],
+      [o.commits, "commits"],
+      [`${o.milestones_done}/${o.milestones_total}`, "roadmap items done"],
+      [o.concepts, "concepts introduced"],
+    ];
+    $("stats").innerHTML = tiles.map(([v, l]) => `<div class="card stat"><div class="value">${esc(v)}</div><div class="label">${esc(l)}</div></div>`).join("");
+  }
+
+  function projects(d) {
+    $("project-cards").innerHTML = d.projects.map((p) => {
+      const pct = p.roadmap_total ? Math.round((100 * p.roadmap_done) / p.roadmap_total) : 0;
+      return `<article class="card project">
+        <div class="top"><h3><a href="${esc(p.url)}">${esc(p.name)}</a></h3><span class="role">${esc(p.role)}</span></div>
+        <p>${esc(p.summary)}</p>
+        <div class="progress" role="img" aria-label="${p.roadmap_done} of ${p.roadmap_total} roadmap items done"><i style="width:${pct}%"></i></div>
+        <div class="foot"><span>${esc(p.stage)}</span><span>${p.roadmap_done}/${p.roadmap_total} roadmap</span>
+          <span>${p.commit_count} commits${p.commit_source === "unavailable" ? " (not available)" : ""}</span>
+          ${p.last_commit ? `<span>last ${esc(day(p.last_commit))}</span>` : ""}</div>
+      </article>`;
+    }).join("");
+  }
+
+  function chart(d) {
+    const counts = Object.fromEntries(d.commits_per_day.map((r) => [r.date, r.count]));
+    const end = new Date(d.generated_at); const days = [];
+    for (let i = 29; i >= 0; i--) { const t = new Date(end); t.setUTCDate(t.getUTCDate() - i); const k = t.toISOString().slice(0, 10); days.push({ date: k, count: counts[k] || 0 }); }
+    const max = Math.max(1, ...days.map((x) => x.count));
+    const W = 600, H = 180, L = 28, B = 22, T = 8, plotW = W - L, plotH = H - B - T;
+    const step = plotW / days.length, bw = Math.max(4, step - 4), y = (v) => T + plotH - (v / max) * plotH;
+    const ticks = [...new Set([0, Math.ceil(max / 2), max])];
+    let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Bar chart of commits per day over the last 30 days; peak ${max}">`;
+    svg += ticks.map((t) => `<line class="gridline" x1="${L}" x2="${W}" y1="${y(t)}" y2="${y(t)}"/><text class="axis" x="${L - 8}" y="${y(t) + 4}" text-anchor="end">${t}</text>`).join("");
+    days.forEach((x, i) => {
+      const bx = L + i * step + (step - bw) / 2, h = (x.count / max) * plotH, by = T + plotH - h, r = Math.min(4, bw / 2, h);
+      const path = h > 0 ? `M${bx},${T + plotH} V${by + r} Q${bx},${by} ${bx + r},${by} H${bx + bw - r} Q${bx + bw},${by} ${bx + bw},${by + r} V${T + plotH} Z` : "";
+      svg += `<rect class="hit" data-i="${i}" x="${L + i * step}" y="${T}" width="${step}" height="${plotH}"/>`;
+      if (path) svg += `<path class="bar" data-i="${i}" d="${path}"/>`;
+    });
+    [0, 14, 29].forEach((i) => { svg += `<text class="axis" x="${L + i * step + step / 2}" y="${H - 4}" text-anchor="${i === 0 ? "start" : i === 29 ? "end" : "middle"}">${days[i].date.slice(5)}</text>`; });
+    svg += "</svg><div class='tip' id='tip'></div>";
+    const el = $("chart"); el.innerHTML = svg;
+    const tip = $("tip"), sv = el.querySelector("svg");
+    el.querySelectorAll(".hit").forEach((r) => {
+      r.addEventListener("mouseenter", () => {
+        const i = +r.dataset.i, x = days[i], box = sv.getBoundingClientRect(), sc = box.width / W;
+        el.querySelectorAll(".bar").forEach((b) => b.classList.toggle("active", +b.dataset.i === i));
+        tip.innerHTML = `<b>${x.count}</b> commit${x.count === 1 ? "" : "s"} · ${x.date}`;
+        tip.style.left = `${(L + i * step + step / 2) * sc}px`; tip.style.top = `${y(x.count) * sc}px`; tip.style.opacity = 1;
+      });
+      r.addEventListener("mouseleave", () => { tip.style.opacity = 0; el.querySelectorAll(".bar").forEach((b) => b.classList.remove("active")); });
+    });
+    const rows = days.filter((x) => x.count).map((x) => `<tr><td class="mono">${x.date}</td><td>${x.count}</td></tr>`).join("");
+    $("chart-table").innerHTML = `<table><thead><tr><th>Date</th><th>Commits</th></tr></thead><tbody>${rows || '<tr><td colspan="2" class="empty">No commits in this period</td></tr>'}</tbody></table>`;
+    $("chart-toggle").onclick = (e) => {
+      const showTable = $("chart-table").hidden; $("chart-table").hidden = !showTable; el.hidden = showTable;
+      e.target.textContent = showTable ? "Chart" : "Table"; e.target.setAttribute("aria-pressed", showTable);
+    };
+  }
+
+  function render(d) {
+    $("generated").textContent = `generated ${d.generated_at.replace("T", " ").replace("+00:00", " UTC")}`;
+    stats(d); projects(d); chart(d);
+    list($("sessions"), d.sessions, (s) => `<li><span class="k">${esc(s.date)}</span><span class="v"><strong>${esc(s.project)}</strong> — ${esc(s.objective)}</span></li>`, "No sessions recorded");
+    list($("commits"), d.recent_commits, (c) => `<li><span class="k">${esc(day(c.date))}</span><span class="v"><strong>${esc(c.project)}</strong> <a href="${esc(c.url)}"><code>${esc(c.short)}</code></a> ${esc(c.subject)}</span></li>`, "No commits yet");
+    $("learning-table").tBodies[0].innerHTML = d.learning.map((r) => `<tr><td>${esc(r.concept)}</td><td>${esc(r.area)}</td><td class="mono">${esc(r.introduced)}</td><td>${esc(r.status)}</td></tr>`).join("");
+    $("stack-chips").innerHTML = d.stack.map((s) => `<span class="chip" title="${esc(s.projects.join(", "))}">${esc(s.name)}<small>${s.projects.length}</small></span>`).join("");
+    list($("done"), d.milestones, (m) => `<li><span class="k">${esc(m.project)}</span><span class="v">${esc(m.text)}</span></li>`, "None yet");
+    list($("todo"), d.upcoming, (m) => `<li><span class="k">${esc(m.project)}</span><span class="v">${esc(m.text)}</span></li>`, "Nothing planned");
+    list($("discoveries"), d.discoveries, (x) => `<li><span class="k">${esc(x.date)}</span><span class="v">${esc(x.text)}</span></li>`, "None recorded");
+    $("testing-table").tBodies[0].innerHTML = d.testing.length ? d.testing.map((t) => {
+      const tests = t.failed ? status("critical", `${t.failed} failed, ${t.passed} passed`) : status("good", `${t.passed} passed`);
+      const lint = t.lint === "pass" ? status("good", "pass") : t.lint === "fail" ? status("critical", "fail") : status("none", t.lint);
+      const ci = /^(pass|green)/.test(t.ci) ? status("good", t.ci) : /^fail/.test(t.ci) ? status("critical", t.ci) : status("none", t.ci);
+      return `<tr><td>${esc(t.project)}</td><td class="mono">${esc(t.date)}</td><td>${tests}</td><td>${lint}</td><td>${ci}</td></tr>`;
+    }).join("") : '<tr><td colspan="5" class="empty">No test runs recorded</td></tr>';
+  }
+
+  fetch("data.json", { cache: "no-store" })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch((e) => { $("generated").textContent = `could not load data.json (${e.message}). Serve this folder over HTTP: python -m http.server`; });
+})();
+</script>
+</body>
+</html>

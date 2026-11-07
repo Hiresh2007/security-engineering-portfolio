@@ -1,0 +1,351 @@
+{
+  "generated_at": "2026-11-07T07:34:29+00:00",
+  "owner": "Hiresh Yadav",
+  "github_user": "Hiresh2007",
+  "overview": {
+    "projects": 4,
+    "sessions": 1,
+    "commits": 1,
+    "concepts": 10,
+    "milestones_done": 6,
+    "milestones_total": 25
+  },
+  "projects": [
+    {
+      "id": "pcap-triage",
+      "name": "pcap-triage",
+      "role": "Flagship",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections (port scans; DNS, beaconing and ARP detectors planned).",
+      "repo": "Hiresh2007/pcap-triage",
+      "stage": "v0.1 in development",
+      "areas": [
+        "Network Traffic Analysis",
+        "Intrusion Detection",
+        "SOC Engineering"
+      ],
+      "stack": [
+        "Python",
+        "Scapy",
+        "pytest",
+        "ruff",
+        "GitHub Actions"
+      ],
+      "url": "https://github.com/Hiresh2007/pcap-triage",
+      "commit_count": 1,
+      "commit_source": "local git",
+      "last_commit": "2026-11-07T11:28:00+04:00",
+      "roadmap_done": 4,
+      "roadmap_total": 15
+    },
+    {
+      "id": "sigma",
+      "name": "SigmaHQ/sigma",
+      "role": "Open-source contribution",
+      "summary": "Generic detection-rule format used by SOCs. Target: false-positive fixes and rule improvements, validated with the repo's test suite.",
+      "repo": "SigmaHQ/sigma",
+      "stage": "Selected, not started",
+      "areas": [
+        "Detection Engineering",
+        "SOC Engineering"
+      ],
+      "stack": [
+        "Sigma",
+        "YAML",
+        "sigma-cli",
+        "Python"
+      ],
+      "url": "https://github.com/SigmaHQ/sigma",
+      "commit_count": 0,
+      "commit_source": "unavailable",
+      "last_commit": null,
+      "roadmap_done": 0,
+      "roadmap_total": 5
+    },
+    {
+      "id": "cybersecurity-journey",
+      "name": "Cybersecurity-Journey",
+      "role": "Supporting",
+      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+). Written by Hiresh.",
+      "repo": "Hiresh2007/Cybersecurity-Journey",
+      "stage": "Ongoing notes (days 1-5)",
+      "areas": [
+        "Fundamentals"
+      ],
+      "stack": [
+        "Markdown"
+      ],
+      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey",
+      "commit_count": 0,
+      "commit_source": "unavailable",
+      "last_commit": null,
+      "roadmap_done": 0,
+      "roadmap_total": 2
+    },
+    {
+      "id": "portfolio",
+      "name": "security-engineering-portfolio",
+      "role": "Tracking & dashboard",
+      "summary": "Session journal, roadmap, learning tracker and this dashboard.",
+      "repo": "Hiresh2007/security-engineering-portfolio",
+      "stage": "Set up",
+      "areas": [
+        "Documentation"
+      ],
+      "stack": [
+        "Python",
+        "HTML/CSS/JS",
+        "GitHub Pages"
+      ],
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio",
+      "commit_count": 0,
+      "commit_source": "local git",
+      "last_commit": null,
+      "roadmap_done": 2,
+      "roadmap_total": 3
+    }
+  ],
+  "sessions": [
+    {
+      "date": "2026-11-07",
+      "project": "pcap-triage",
+      "objective": "First session: audit, project selection, tracking system, dashboard, first flagship feature",
+      "file": "journal/2026-11-07.md"
+    }
+  ],
+  "commits_per_day": [
+    {
+      "date": "2026-11-07",
+      "count": 1
+    }
+  ],
+  "recent_commits": [
+    {
+      "sha": "0ca25010893450a7a71224bc06385294efb5a4d3",
+      "short": "0ca2501",
+      "date": "2026-11-07T11:28:00+04:00",
+      "subject": "Add PCAP reader, flow summary and TCP port-scan detection",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/0ca25010893450a7a71224bc06385294efb5a4d3"
+    }
+  ],
+  "learning": [
+    {
+      "concept": "TCP three-way handshake & flags (SYN, SYN-ACK, RST)",
+      "area": "Network Security",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "SYN (half-open) port scanning & how replies reveal open/closed ports",
+      "area": "Network Security",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Vertical scan vs horizontal sweep",
+      "area": "Intrusion Detection",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Sliding-window distinct counting (two pointers)",
+      "area": "Detection Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Detection thresholds, false positives & evasion (slow scans)",
+      "area": "SOC Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "MITRE ATT&CK mapping (T1046 Network Service Discovery)",
+      "area": "Threat Intelligence",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "pcap vs pcapng formats; streaming reads with Scapy PcapReader",
+      "area": "Network Traffic Analysis",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Building synthetic test traffic with Scapy",
+      "area": "Python Security Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Static security linting (ruff / flake8-bandit S rules)",
+      "area": "Python Security Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "CI with GitHub Actions test matrix",
+      "area": "Security Automation",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    }
+  ],
+  "stack": [
+    {
+      "name": "GitHub Actions",
+      "projects": [
+        "pcap-triage"
+      ]
+    },
+    {
+      "name": "GitHub Pages",
+      "projects": [
+        "security-engineering-portfolio"
+      ]
+    },
+    {
+      "name": "HTML/CSS/JS",
+      "projects": [
+        "security-engineering-portfolio"
+      ]
+    },
+    {
+      "name": "Markdown",
+      "projects": [
+        "Cybersecurity-Journey"
+      ]
+    },
+    {
+      "name": "Python",
+      "projects": [
+        "pcap-triage",
+        "SigmaHQ/sigma",
+        "security-engineering-portfolio"
+      ]
+    },
+    {
+      "name": "Scapy",
+      "projects": [
+        "pcap-triage"
+      ]
+    },
+    {
+      "name": "Sigma",
+      "projects": [
+        "SigmaHQ/sigma"
+      ]
+    },
+    {
+      "name": "YAML",
+      "projects": [
+        "SigmaHQ/sigma"
+      ]
+    },
+    {
+      "name": "pytest",
+      "projects": [
+        "pcap-triage"
+      ]
+    },
+    {
+      "name": "ruff",
+      "projects": [
+        "pcap-triage"
+      ]
+    },
+    {
+      "name": "sigma-cli",
+      "projects": [
+        "SigmaHQ/sigma"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "project": "pcap-triage",
+      "text": "Streaming pcap/pcapng reader (IPv4/IPv6, TCP/UDP/ICMP)"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "Directional flow summary, top talkers, text/JSON report"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "TCP vertical scan and horizontal sweep detection (T1046) with tests"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "CI workflow (ruff + pytest, Python 3.10-3.13)"
+    },
+    {
+      "project": "security-engineering-portfolio",
+      "text": "Tracking files: PROJECT_STATE.md, ROADMAP.md, DEVELOPMENT_LOG.md, LEARNING/, journal/"
+    },
+    {
+      "project": "security-engineering-portfolio",
+      "text": "Dashboard generated from tracking files and git history"
+    }
+  ],
+  "upcoming": [
+    {
+      "project": "pcap-triage",
+      "text": "Publish repo to GitHub and confirm CI is green"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "Record real Nmap scans against a local VM / Docker target and validate the detector on them"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Fork SigmaHQ/sigma, set up sigma-cli and run tests/test_rules.py locally"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Read rule creation guide and 10 existing rules in one log-source family"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Find a reproducible false-positive or missing-field issue to fix"
+    },
+    {
+      "project": "Cybersecurity-Journey",
+      "text": "Continue daily notes"
+    },
+    {
+      "project": "Cybersecurity-Journey",
+      "text": "Add a writeups/ folder for completed TryHackMe/HTB rooms (profile README links to writeups that do not exist yet)"
+    },
+    {
+      "project": "security-engineering-portfolio",
+      "text": "Publish repo and enable GitHub Pages deployment"
+    }
+  ],
+  "discoveries": [
+    {
+      "date": "2026-11-07",
+      "text": "secdev/scapy's CONTRIBUTING requires an AI-Assisted: yes/no (tool) trailer on every commit, adapted from Wireshark's AI policy."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "On a slots=True dataclass, Cls.field is a slot descriptor rather than the default value. Read defaults from an instance."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "Scapy needs no libpcap/Npcap to read or write capture files, but building ARP() / Ether() without explicit MACs makes it resolve a local interface, which fails on Windows without Npcap. Tests set MACs explicitly."
+    }
+  ],
+  "testing": [
+    {
+      "project": "pcap-triage",
+      "date": "2026-11-07",
+      "passed": 26,
+      "failed": 0,
+      "lint": "pass",
+      "ci": "not run (repo not yet on GitHub)"
+    }
+  ]
+}

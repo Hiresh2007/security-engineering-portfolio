@@ -1,0 +1,51 @@
+{
+  "owner": "Hiresh Yadav",
+  "github_user": "Hiresh2007",
+  "projects": [
+    {
+      "id": "pcap-triage",
+      "name": "pcap-triage",
+      "role": "Flagship",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections (port scans; DNS, beaconing and ARP detectors planned).",
+      "repo": "Hiresh2007/pcap-triage",
+      "local_path": "../pcap-triage",
+      "stage": "v0.1 in development",
+      "areas": ["Network Traffic Analysis", "Intrusion Detection", "SOC Engineering"],
+      "stack": ["Python", "Scapy", "pytest", "ruff", "GitHub Actions"]
+    },
+    {
+      "id": "sigma",
+      "name": "SigmaHQ/sigma",
+      "role": "Open-source contribution",
+      "summary": "Generic detection-rule format used by SOCs. Target: false-positive fixes and rule improvements, validated with the repo's test suite.",
+      "repo": "SigmaHQ/sigma",
+      "fork": "Hiresh2007/sigma",
+      "local_path": "../sigma",
+      "stage": "Selected, not started",
+      "areas": ["Detection Engineering", "SOC Engineering"],
+      "stack": ["Sigma", "YAML", "sigma-cli", "Python"]
+    },
+    {
+      "id": "cybersecurity-journey",
+      "name": "Cybersecurity-Journey",
+      "role": "Supporting",
+      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+). Written by Hiresh.",
+      "repo": "Hiresh2007/Cybersecurity-Journey",
+      "local_path": "../Cybersecurity-Journey",
+      "stage": "Ongoing notes (days 1-5)",
+      "areas": ["Fundamentals"],
+      "stack": ["Markdown"]
+    },
+    {
+      "id": "portfolio",
+      "name": "security-engineering-portfolio",
+      "role": "Tracking & dashboard",
+      "summary": "Session journal, roadmap, learning tracker and this dashboard.",
+      "repo": "Hiresh2007/security-engineering-portfolio",
+      "local_path": ".",
+      "stage": "Set up",
+      "areas": ["Documentation"],
+      "stack": ["Python", "HTML/CSS/JS", "GitHub Pages"]
+    }
+  ]
+}
