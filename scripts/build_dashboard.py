@@ -120,8 +120,10 @@ def local_commits(path: Path) -> list[dict[str, str]] | None:
     git = shutil.which("git")
     if git is None or not (path / ".git").exists():
         return None
+    # Count only the default branch, so unmerged feature-branch work that happens
+    # to be checked out locally is not reported as published.
     proc = subprocess.run(  # noqa: S603 - fixed argv, no shell, path from our own config
-        [git, "-C", str(path), "log", f"-n{MAX_COMMITS}", f"--pretty=format:{GIT_FIELDS}"],
+        [git, "-C", str(path), "log", "main", f"-n{MAX_COMMITS}", f"--pretty=format:{GIT_FIELDS}"],
         capture_output=True,
         text=True,
         check=False,

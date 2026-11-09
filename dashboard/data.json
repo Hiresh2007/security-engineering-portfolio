@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-07T13:09:59+00:00",
+  "generated_at": "2026-11-09T17:23:10+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 2,
-    "commits": 9,
-    "concepts": 17,
+    "sessions": 3,
+    "commits": 8,
+    "concepts": 21,
     "milestones_done": 8,
     "milestones_total": 25
   },
@@ -31,9 +31,9 @@
         "GitHub Actions"
       ],
       "url": "https://github.com/Hiresh2007/pcap-triage",
-      "commit_count": 2,
+      "commit_count": 1,
       "commit_source": "local git",
-      "last_commit": "2026-11-07T17:08:23+04:00",
+      "last_commit": "2026-11-07T11:28:00+04:00",
       "roadmap_done": 5,
       "roadmap_total": 15
     },
@@ -106,6 +106,12 @@
   ],
   "sessions": [
     {
+      "date": "2026-11-09",
+      "project": "pcap-triage",
+      "objective": "Beaconing (C2 heartbeat) detector for pcap-triage v0.2",
+      "file": "journal/2026-11-09.md"
+    },
+    {
       "date": "2026-11-07",
       "project": "pcap-triage",
       "objective": "DNS tunnelling and NXDOMAIN (DGA) detection for pcap-triage v0.2; fix profile asset build race",
@@ -133,18 +139,10 @@
     },
     {
       "date": "2026-11-07",
-      "count": 4
+      "count": 3
     }
   ],
   "recent_commits": [
-    {
-      "sha": "2f766a102bf4b574ee42a879488f24edc7d82d7f",
-      "short": "2f766a1",
-      "date": "2026-11-07T17:08:23+04:00",
-      "subject": "Add DNS tunnelling and NXDOMAIN (DGA) detection",
-      "project": "pcap-triage",
-      "url": "https://github.com/Hiresh2007/pcap-triage/commit/2f766a102bf4b574ee42a879488f24edc7d82d7f"
-    },
     {
       "sha": "ee42ddcbd420c3dccc1c89086b07b73e6b9eba38",
       "short": "ee42ddc",
@@ -312,6 +310,30 @@
       "area": "Detection Engineering",
       "introduced": "2026-11-07",
       "status": "introduced"
+    },
+    {
+      "concept": "C2 beaconing and jitter as an evasion technique",
+      "area": "Threat Intelligence",
+      "introduced": "2026-11-09",
+      "status": "introduced"
+    },
+    {
+      "concept": "Robust statistics: median and median absolute deviation (MAD)",
+      "area": "Detection Engineering",
+      "introduced": "2026-11-09",
+      "status": "introduced"
+    },
+    {
+      "concept": "Measuring detection and false-positive rates by simulation",
+      "area": "Detection Engineering",
+      "introduced": "2026-11-09",
+      "status": "introduced"
+    },
+    {
+      "concept": "Stacked pull requests",
+      "area": "Security Automation",
+      "introduced": "2026-11-09",
+      "status": "introduced"
     }
   ],
   "stack": [
@@ -429,7 +451,7 @@
     },
     {
       "project": "pcap-triage",
-      "text": "Beaconing detector: low-jitter periodic connections (T1071)"
+      "text": "Beaconing detector: low-jitter periodic connections (T1071). Implemented and tested in pcap-triage PR #2, awaiting merge"
     },
     {
       "project": "SigmaHQ/sigma",
@@ -480,16 +502,24 @@
     {
       "date": "2026-11-07",
       "text": "Hex-encoded plain text averages ~3.2\u20133.35 bits/char of Shannon entropy, random hex ~3.9 (max 4.0). A 3.5 threshold misses realistic DNS exfiltration; pcap-triage uses 3.0 plus length and unique-count conditions."
+    },
+    {
+      "date": "2026-11-09",
+      "text": "False positives of interval-regularity tests on irregular traffic fall with event count (2.5 % at 8 events, 0 % at 30 in 200 trials): minimum event count is the main precision control."
+    },
+    {
+      "date": "2026-11-09",
+      "text": "Uniform \u00b1j jitter gives a MAD of about j/2 of the interval; a 0.2 MAD/median threshold catches \u00b130 % jitter 96 % of the time and \u00b140 % only 70 %."
     }
   ],
   "testing": [
     {
       "project": "pcap-triage",
-      "date": "2026-11-07",
-      "passed": 57,
+      "date": "2026-11-09",
+      "passed": 77,
       "failed": 0,
       "lint": "pass",
-      "ci": "pass (PR #1, Python 3.10-3.13)"
+      "ci": "pass (PR #2, Python 3.10-3.13)"
     }
   ]
 }
