@@ -1,12 +1,12 @@
 # Project state
 
-_Last updated: 2026-11-10 (session 4)_
+_Last updated: 2026-11-10 (session 4, after merges)_
 
 ## Selected projects
 
 | Project | Role | Stage | Repo |
 |---|---|---|---|
-| pcap-triage | Flagship (original) | v0.1 on `main`; v0.2 in review: DNS detection (PR #1), beaconing (PR #2, stacked) | [GitHub](https://github.com/Hiresh2007/pcap-triage), CI green |
+| pcap-triage | Flagship (original) | v0.2.0 on `main`: port scans, DNS tunnelling, DGA, beaconing (77 tests) | [GitHub](https://github.com/Hiresh2007/pcap-triage), CI green |
 | SigmaHQ/sigma | Open-source contribution | First change prepared locally (DNS base64 rule); fork not created | local clone `../sigma` |
 | Cybersecurity-Journey | Supporting (Hiresh's notes) | Days 1–5 | [GitHub](https://github.com/Hiresh2007/Cybersecurity-Journey) |
 | security-engineering-portfolio | Tracking + dashboard | [Live dashboard](https://hiresh2007.github.io/security-engineering-portfolio/) | [GitHub](https://github.com/Hiresh2007/security-engineering-portfolio) |
@@ -27,17 +27,14 @@ restarted at #1.
 
 ## Branches
 
-- pcap-triage: `main`, `feature/dns-anomaly-detector`, `feature/beaconing-detector`
-- Hiresh2007: `main`, `output` (generated assets), `fix-assets-concurrency`
-- security-engineering-portfolio: `main`, `session-2-dns-detector`, `session-3-beaconing`, `session-4-sigma`
-- sigma (local only): `rule-update-dns-b64-single-padding` @ `a5f78ab`
+All repos: `main` only (plus the generated `output` branch in Hiresh2007).
+Local only: `../sigma` branch `rule-update-dns-b64-single-padding` @ `a5f78ab`.
 
-## Open pull requests (awaiting Hiresh's merge approval)
+## Open pull requests
 
-- pcap-triage #1: DNS tunnelling and NXDOMAIN (DGA) detection (v0.2.0)
-- pcap-triage #2: beaconing detection (stacked on #1; merge #1 first)
-- Hiresh2007 #1: run profile asset builds one at a time
-- security-engineering-portfolio #1 (session 2), #2 (session 3, stacked), session 4 (stacked)
+None. Merged on 2026-11-10 with Hiresh's approval: pcap-triage #1 (DNS) and
+#3 (beaconing; replaces #2, which GitHub closed when its base branch was
+deleted), portfolio #1–#3, profile #1.
 
 ## Blockers
 

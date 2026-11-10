@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-10T08:47:34+00:00",
+  "generated_at": "2026-11-10T09:12:17+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
     "sessions": 4,
-    "commits": 8,
+    "commits": 13,
     "concepts": 25,
-    "milestones_done": 12,
+    "milestones_done": 14,
     "milestones_total": 26
   },
   "projects": [
@@ -15,9 +15,9 @@
       "id": "pcap-triage",
       "name": "pcap-triage",
       "role": "Flagship",
-      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling and DGA activity.",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling, DGA activity and C2 beaconing.",
       "repo": "Hiresh2007/pcap-triage",
-      "stage": "v0.2 in review",
+      "stage": "v0.2.0 released on main",
       "areas": [
         "Network Traffic Analysis",
         "Intrusion Detection",
@@ -31,10 +31,10 @@
         "GitHub Actions"
       ],
       "url": "https://github.com/Hiresh2007/pcap-triage",
-      "commit_count": 1,
+      "commit_count": 3,
       "commit_source": "local git",
-      "last_commit": "2026-11-07T11:28:00+04:00",
-      "roadmap_done": 5,
+      "last_commit": "2026-11-10T13:08:33+04:00",
+      "roadmap_done": 7,
       "roadmap_total": 15
     },
     {
@@ -97,9 +97,9 @@
         "GitHub Pages"
       ],
       "url": "https://github.com/Hiresh2007/security-engineering-portfolio",
-      "commit_count": 2,
+      "commit_count": 5,
       "commit_source": "local git",
-      "last_commit": "2026-11-07T12:12:16+04:00",
+      "last_commit": "2026-11-10T13:10:34+04:00",
       "roadmap_done": 3,
       "roadmap_total": 3
     }
@@ -146,9 +146,53 @@
     {
       "date": "2026-11-07",
       "count": 3
+    },
+    {
+      "date": "2026-11-10",
+      "count": 5
     }
   ],
   "recent_commits": [
+    {
+      "sha": "350c0662967188f773c8d14e7b9445d8c4b38418",
+      "short": "350c066",
+      "date": "2026-11-10T13:10:34+04:00",
+      "subject": "Record session 4: Sigma setup and first prepared contribution",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/350c0662967188f773c8d14e7b9445d8c4b38418"
+    },
+    {
+      "sha": "368ba955197d9c0634467d533c006d276deae34a",
+      "short": "368ba95",
+      "date": "2026-11-10T13:09:50+04:00",
+      "subject": "Record session 3; dashboard counts only main-branch commits",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/368ba955197d9c0634467d533c006d276deae34a"
+    },
+    {
+      "sha": "540fb67e724e1333169caa541c18356fae6ebb3d",
+      "short": "540fb67",
+      "date": "2026-11-10T13:09:01+04:00",
+      "subject": "Record session 2 and support several journal files per day",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/540fb67e724e1333169caa541c18356fae6ebb3d"
+    },
+    {
+      "sha": "eeb4a3ee8179d127722cd3ad9cc8322c669c2003",
+      "short": "eeb4a3e",
+      "date": "2026-11-10T13:08:33+04:00",
+      "subject": "Add beaconing detection",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/eeb4a3ee8179d127722cd3ad9cc8322c669c2003"
+    },
+    {
+      "sha": "555b9939ff4beacbfc776291f3f76344e130b7bb",
+      "short": "555b993",
+      "date": "2026-11-10T13:06:23+04:00",
+      "subject": "Add DNS tunnelling and NXDOMAIN (DGA) detection (v0.2.0)",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/555b9939ff4beacbfc776291f3f76344e130b7bb"
+    },
     {
       "sha": "ee42ddcbd420c3dccc1c89086b07b73e6b9eba38",
       "short": "ee42ddc",
@@ -204,14 +248,6 @@
       "subject": "Add day 1 and 2 notes",
       "project": "Cybersecurity-Journey",
       "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/02aea95a3a1cd897760cd570475ea08991774dc8"
-    },
-    {
-      "sha": "2918e1ce84e5311e06b24d9f7dfd028a07cf8db5",
-      "short": "2918e1c",
-      "date": "2026-07-15T05:38:13Z",
-      "subject": "Initial commit",
-      "project": "Cybersecurity-Journey",
-      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/2918e1ce84e5311e06b24d9f7dfd028a07cf8db5"
     }
   ],
   "learning": [
@@ -458,6 +494,14 @@
       "text": "Publish repo to GitHub and confirm CI is green"
     },
     {
+      "project": "pcap-triage",
+      "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "Beaconing detector: low-jitter periodic connections (T1071)"
+    },
+    {
       "project": "SigmaHQ/sigma",
       "text": "Set up sigma-cli locally and validate the full rule set with CI's pinned validators"
     },
@@ -493,11 +537,11 @@
     },
     {
       "project": "pcap-triage",
-      "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002). Implemented and tested in pcap-triage PR #1, awaiting merge"
+      "text": "ARP spoofing detector: IP-to-MAC binding changes (T1557.002)"
     },
     {
       "project": "pcap-triage",
-      "text": "Beaconing detector: low-jitter periodic connections (T1071). Implemented and tested in pcap-triage PR #2, awaiting merge"
+      "text": "Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)"
     },
     {
       "project": "SigmaHQ/sigma",
