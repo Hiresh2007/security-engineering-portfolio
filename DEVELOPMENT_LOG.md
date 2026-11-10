@@ -2,6 +2,14 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-09 — Session 3 ([journal](journal/2026-11-09.md))
+
+- **pcap-triage PR #2 (stacked on #1):** beaconing detector (T1071) using
+  median interval and MAD-based jitter per channel; CLI flags; demo beacon;
+  20 new tests (77 total), CI green on 3.10–3.13.
+- **Threshold evidence:** simulation of detection and false-positive rates
+  recorded in `docs/DESIGN.md`.
+
 ## 2026-11-07 — Session 2 ([journal](journal/2026-11-07-2.md))
 
 - **pcap-triage PR #1 (v0.2.0):** DNS tunnelling (T1071.004) and NXDOMAIN/DGA

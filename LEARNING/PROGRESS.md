@@ -26,6 +26,10 @@ The table below is parsed by the dashboard; keep the column order.
 | Registered domains vs public suffixes (example.co.uk) | Network Security | 2026-11-07 | introduced | `split_name()` |
 | Terminal escape injection from untrusted input | Python Security Engineering | 2026-11-07 | introduced | `_printable_name()` |
 | Regression tests that pin a threshold decision | Detection Engineering | 2026-11-07 | introduced | `test_detects_hex_encoded_text_tunnel` |
+| C2 beaconing and jitter as an evasion technique | Threat Intelligence | 2026-11-09 | introduced | `detectors/beacon.py` |
+| Robust statistics: median and median absolute deviation (MAD) | Detection Engineering | 2026-11-09 | introduced | `interval_stats()` |
+| Measuring detection and false-positive rates by simulation | Detection Engineering | 2026-11-09 | introduced | `docs/DESIGN.md` beacon table |
+| Stacked pull requests | Security Automation | 2026-11-09 | introduced | pcap-triage PR #2 on #1 |
 
 ## Exercises for Hiresh
 
@@ -47,6 +51,12 @@ Small tasks to turn *introduced* into *practised*. Do them yourself; ask for rev
 7. Take one tunnel query from the demo report (e.g. `006c6162...`), strip the
    first two characters (the sequence number) and decode the rest from hex. What was
    exfiltrated?
+
+8. Intervals of 60, 61, 59, 60, 300 s: compute the mean, standard deviation, median and
+   MAD by hand. Which pair is still describing "every 60 s" after the 300 s outlier?
+9. Name three legitimate programs on your own PC that probably beacon (check Task
+   Manager or `netstat -abon` every minute). How would you allow-list them without
+   hiding a real implant?
 
 ## Exercises completed
 

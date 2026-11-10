@@ -70,3 +70,18 @@ def test_journal_accepts_multiple_sessions_per_day(tmp_path):
         (tmp_path / junk).write_text("---\ndate: x\nobjective: junk\n---\n")
     sessions = bd.load_journal(tmp_path)
     assert [s["objective"] for s in sessions] == ["one", "two", "ten", "next day"]
+
+
+def test_local_commits_ignore_checked_out_feature_branch(tmp_path):
+    import subprocess
+
+    def git(*args):
+        subprocess.run(["git", "-C", str(tmp_path), *args], check=True, capture_output=True)
+
+    git("init", "-b", "main")
+    git("config", "user.email", "t@example.com")
+    git("config", "user.name", "t")
+    git("commit", "--allow-empty", "-m", "on main")
+    git("checkout", "-b", "feature")
+    git("commit", "--allow-empty", "-m", "unmerged")
+    assert [c["subject"] for c in bd.local_commits(tmp_path)] == ["on main"]

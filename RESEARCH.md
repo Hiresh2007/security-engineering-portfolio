@@ -35,6 +35,8 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
 
 ## Discoveries
 
+- 2026-11-09 — Uniform ±j jitter gives a MAD of about j/2 of the interval; a 0.2 MAD/median threshold catches ±30 % jitter 96 % of the time and ±40 % only 70 %.
+- 2026-11-09 — False positives of interval-regularity tests on irregular traffic fall with event count (2.5 % at 8 events, 0 % at 30 in 200 trials): minimum event count is the main precision control.
 - 2026-11-07 — Hex-encoded plain text averages ~3.2–3.35 bits/char of Shannon entropy, random hex ~3.9 (max 4.0). A 3.5 threshold misses realistic DNS exfiltration; pcap-triage uses 3.0 plus length and unique-count conditions.
 - 2026-11-07 — DNS labels can carry arbitrary bytes, including terminal escape sequences; tools that print query names should escape them.
 - 2026-11-07 — GitHub Actions runs that push to the same branch race; a `concurrency` group queues them.

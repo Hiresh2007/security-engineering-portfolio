@@ -1,12 +1,12 @@
 # Project state
 
-_Last updated: 2026-11-07 (session 2)_
+_Last updated: 2026-11-09 (session 3)_
 
 ## Selected projects
 
 | Project | Role | Stage | Repo |
 |---|---|---|---|
-| pcap-triage | Flagship (original) | v0.1 on `main`; v0.2 (DNS detection) in PR #1 | [GitHub](https://github.com/Hiresh2007/pcap-triage), CI green |
+| pcap-triage | Flagship (original) | v0.1 on `main`; v0.2 in review: DNS detection (PR #1), beaconing (PR #2, stacked) | [GitHub](https://github.com/Hiresh2007/pcap-triage), CI green |
 | SigmaHQ/sigma | Open-source contribution | Selected; fork not created | n/a |
 | Cybersecurity-Journey | Supporting (Hiresh's notes) | Days 1–5 | [GitHub](https://github.com/Hiresh2007/Cybersecurity-Journey) |
 | security-engineering-portfolio | Tracking + dashboard | [Live dashboard](https://hiresh2007.github.io/security-engineering-portfolio/) | [GitHub](https://github.com/Hiresh2007/security-engineering-portfolio) |
@@ -18,6 +18,7 @@ restarted at #1.
 
 ## Last completed tasks
 
+- Session 3: beaconing detector (77 tests), threshold simulation.
 - Session 2: DNS tunnelling + NXDOMAIN detection (57 tests), profile asset
   build race fix, dashboard support for several sessions per day.
 - Session 1: audit, project selection, pcap-triage v0.1, tracking system,
@@ -25,15 +26,16 @@ restarted at #1.
 
 ## Branches
 
-- pcap-triage: `main`, `feature/dns-anomaly-detector`
+- pcap-triage: `main`, `feature/dns-anomaly-detector`, `feature/beaconing-detector`
 - Hiresh2007: `main`, `output` (generated assets), `fix-assets-concurrency`
-- security-engineering-portfolio: `main`, `session-2-dns-detector`
+- security-engineering-portfolio: `main`, `session-2-dns-detector`, `session-3-beaconing`
 
 ## Open pull requests (awaiting Hiresh's merge approval)
 
 - pcap-triage #1: DNS tunnelling and NXDOMAIN (DGA) detection (v0.2.0)
+- pcap-triage #2: beaconing detection (stacked on #1; merge #1 first)
 - Hiresh2007 #1: run profile asset builds one at a time
-- security-engineering-portfolio: session 2 records
+- security-engineering-portfolio #1: session 2 records; session 3 records (stacked)
 
 ## Blockers
 
@@ -44,6 +46,6 @@ restarted at #1.
 
 ## Pending work
 
-- Beaconing detector (pcap-triage v0.2 roadmap)
+- Per-detector allow-lists / config file (pcap-triage v0.3)
 - Sigma: fork + local test setup
 - Pin pcap-triage and security-engineering-portfolio on the profile (manual)
