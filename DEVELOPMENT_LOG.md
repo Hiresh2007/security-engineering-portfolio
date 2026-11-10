@@ -2,6 +2,13 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-10 — Session 4 ([journal](journal/2026-11-10.md))
+
+- **Sigma setup:** local clone and sigma-cli; the full rule set validates with
+  0 issues under CI's pinned validators (55 with the latest, all UUID v1 ids).
+- **Contribution prepared:** DNS base64 rule `==.` -> `=.` to cover single
+  padding; validated; draft PR in `contributions/`. Not submitted (needs approval).
+
 ## 2026-11-09 — Session 3 ([journal](journal/2026-11-09.md))
 
 - **pcap-triage PR #2 (stacked on #1):** beaconing detector (T1071) using

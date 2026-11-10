@@ -30,6 +30,10 @@ The table below is parsed by the dashboard; keep the column order.
 | Robust statistics: median and median absolute deviation (MAD) | Detection Engineering | 2026-11-09 | introduced | `interval_stats()` |
 | Measuring detection and false-positive rates by simulation | Detection Engineering | 2026-11-09 | introduced | `docs/DESIGN.md` beacon table |
 | Stacked pull requests | Security Automation | 2026-11-09 | introduced | pcap-triage PR #2 on #1 |
+| Sigma rule structure: logsource, selection, condition, value modifiers | Detection Engineering | 2026-11-10 | introduced | `contributions/sigma-dns-b64-padding.md` |
+| Base64 padding (3 bytes -> 4 chars, `=` / `==` remainder) | Network Traffic Analysis | 2026-11-10 | introduced | same |
+| Pinning validator versions to match upstream CI | Security Automation | 2026-11-10 | introduced | journal 2026-11-10 |
+| Open-source contribution etiquette (assigned issues, templates, changelog tags) | SOC Engineering | 2026-11-10 | introduced | same |
 
 ## Exercises for Hiresh
 
@@ -57,6 +61,9 @@ Small tasks to turn *introduced* into *practised*. Do them yourself; ask for rev
 9. Name three legitimate programs on your own PC that probably beacon (check Task
    Manager or `netstat -abon` every minute). How would you allow-list them without
    hiding a real implant?
+10. Base64-encode `a`, `ab` and `abc` (e.g. `python -c "import base64; print(base64.b64encode(b'ab'))"`).
+    Explain why the padding is `==`, `=` and nothing, and why changing the Sigma rule from `==.`
+    to `=.` doubles what it catches but still misses a third.
 
 ## Exercises completed
 

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-11-09T17:23:10+00:00",
+  "generated_at": "2026-11-10T08:47:34+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 3,
+    "sessions": 4,
     "commits": 8,
-    "concepts": 21,
-    "milestones_done": 8,
-    "milestones_total": 25
+    "concepts": 25,
+    "milestones_done": 12,
+    "milestones_total": 26
   },
   "projects": [
     {
@@ -43,7 +43,7 @@
       "role": "Open-source contribution",
       "summary": "Generic detection-rule format used by SOCs. Target: false-positive fixes and rule improvements, validated with the repo's test suite.",
       "repo": "SigmaHQ/sigma",
-      "stage": "Selected, not started",
+      "stage": "First contribution prepared",
       "areas": [
         "Detection Engineering",
         "SOC Engineering"
@@ -56,10 +56,10 @@
       ],
       "url": "https://github.com/SigmaHQ/sigma",
       "commit_count": 0,
-      "commit_source": "unavailable",
+      "commit_source": "local git",
       "last_commit": null,
-      "roadmap_done": 0,
-      "roadmap_total": 5
+      "roadmap_done": 4,
+      "roadmap_total": 6
     },
     {
       "id": "cybersecurity-journey",
@@ -105,6 +105,12 @@
     }
   ],
   "sessions": [
+    {
+      "date": "2026-11-10",
+      "project": "SigmaHQ/sigma",
+      "objective": "Set up Sigma locally, validate the rule set, find and prepare a first contribution",
+      "file": "journal/2026-11-10.md"
+    },
     {
       "date": "2026-11-09",
       "project": "pcap-triage",
@@ -334,6 +340,30 @@
       "area": "Security Automation",
       "introduced": "2026-11-09",
       "status": "introduced"
+    },
+    {
+      "concept": "Sigma rule structure: logsource, selection, condition, value modifiers",
+      "area": "Detection Engineering",
+      "introduced": "2026-11-10",
+      "status": "introduced"
+    },
+    {
+      "concept": "Base64 padding (3 bytes -> 4 chars, = / == remainder)",
+      "area": "Network Traffic Analysis",
+      "introduced": "2026-11-10",
+      "status": "introduced"
+    },
+    {
+      "concept": "Pinning validator versions to match upstream CI",
+      "area": "Security Automation",
+      "introduced": "2026-11-10",
+      "status": "introduced"
+    },
+    {
+      "concept": "Open-source contribution etiquette (assigned issues, templates, changelog tags)",
+      "area": "SOC Engineering",
+      "introduced": "2026-11-10",
+      "status": "introduced"
     }
   ],
   "stack": [
@@ -428,6 +458,22 @@
       "text": "Publish repo to GitHub and confirm CI is green"
     },
     {
+      "project": "SigmaHQ/sigma",
+      "text": "Set up sigma-cli locally and validate the full rule set with CI's pinned validators"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Read rule creation guide and the DNS rule family"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Find a reproducible issue to fix (DNS base64 rule misses single padding)"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Test the change locally (sigma check, CI validator version)"
+    },
+    {
       "project": "security-engineering-portfolio",
       "text": "Tracking files: PROJECT_STATE.md, ROADMAP.md, DEVELOPMENT_LOG.md, LEARNING/, journal/"
     },
@@ -455,15 +501,11 @@
     },
     {
       "project": "SigmaHQ/sigma",
-      "text": "Fork SigmaHQ/sigma, set up sigma-cli and run tests/test_rules.py locally"
+      "text": "Fork SigmaHQ/sigma"
     },
     {
       "project": "SigmaHQ/sigma",
-      "text": "Read rule creation guide and 10 existing rules in one log-source family"
-    },
-    {
-      "project": "SigmaHQ/sigma",
-      "text": "Find a reproducible false-positive or missing-field issue to fix"
+      "text": "Open the first PR with evidence and references (prepared in contributions/, awaiting approval)"
     },
     {
       "project": "Cybersecurity-Journey",
@@ -510,6 +552,18 @@
     {
       "date": "2026-11-09",
       "text": "Uniform \u00b1j jitter gives a MAD of about j/2 of the interval; a 0.2 MAD/median threshold catches \u00b130 % jitter 96 % of the time and \u00b140 % only 70 %."
+    },
+    {
+      "date": "2026-11-10",
+      "text": "SigmaHQ/sigma triages fast (2 unassigned open issues in the whole tracker); first contributions are more likely found by reviewing rules in a familiar area."
+    },
+    {
+      "date": "2026-11-10",
+      "text": "Sigma rule Suspicious DNS Query with B64 Encoded String matched only ==., missing single-padded base64 (one third of encodings). Fix prepared locally."
+    },
+    {
+      "date": "2026-11-10",
+      "text": "SigmaHQ CI pins pySigma-validators-sigmahq==0.21.*; the latest 0.30.0 reports 55 extra issues (UUID v1 rule ids) on upstream main. Validate locally with the pinned version."
     }
   ],
   "testing": [
