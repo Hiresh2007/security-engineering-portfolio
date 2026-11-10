@@ -15,7 +15,7 @@ Phase 1: core analysis (v0.1)
 - [ ] Record real Nmap scans against a local VM / Docker target and validate the detector on them
 
 Phase 2: more detectors (v0.2)
-- [ ] DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)
+- [ ] DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002). Implemented and tested in pcap-triage PR #1, awaiting merge
 - [ ] Beaconing detector: low-jitter periodic connections (T1071)
 - [ ] ARP spoofing detector: IP-to-MAC binding changes (T1557.002)
 - [ ] Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)

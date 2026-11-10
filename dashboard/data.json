@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-07T08:08:07+00:00",
+  "generated_at": "2026-11-07T13:09:59+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 1,
-    "commits": 8,
-    "concepts": 10,
+    "sessions": 2,
+    "commits": 9,
+    "concepts": 17,
     "milestones_done": 8,
     "milestones_total": 25
   },
@@ -15,9 +15,9 @@
       "id": "pcap-triage",
       "name": "pcap-triage",
       "role": "Flagship",
-      "summary": "Offline PCAP triage: flow summaries and explainable detections (port scans; DNS, beaconing and ARP detectors planned).",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling and DGA activity.",
       "repo": "Hiresh2007/pcap-triage",
-      "stage": "v0.1 in development",
+      "stage": "v0.2 in review",
       "areas": [
         "Network Traffic Analysis",
         "Intrusion Detection",
@@ -31,9 +31,9 @@
         "GitHub Actions"
       ],
       "url": "https://github.com/Hiresh2007/pcap-triage",
-      "commit_count": 1,
+      "commit_count": 2,
       "commit_source": "local git",
-      "last_commit": "2026-11-07T11:28:00+04:00",
+      "last_commit": "2026-11-07T17:08:23+04:00",
       "roadmap_done": 5,
       "roadmap_total": 15
     },
@@ -99,12 +99,18 @@
       "url": "https://github.com/Hiresh2007/security-engineering-portfolio",
       "commit_count": 2,
       "commit_source": "local git",
-      "last_commit": "2026-11-07T11:49:16+04:00",
+      "last_commit": "2026-11-07T12:12:16+04:00",
       "roadmap_done": 3,
       "roadmap_total": 3
     }
   ],
   "sessions": [
+    {
+      "date": "2026-11-07",
+      "project": "pcap-triage",
+      "objective": "DNS tunnelling and NXDOMAIN (DGA) detection for pcap-triage v0.2; fix profile asset build race",
+      "file": "journal/2026-11-07-2.md"
+    },
     {
       "date": "2026-11-07",
       "project": "pcap-triage",
@@ -127,33 +133,41 @@
     },
     {
       "date": "2026-11-07",
-      "count": 3
+      "count": 4
     }
   ],
   "recent_commits": [
     {
-      "sha": "bfeb7781d4675ae22f77e3f5178e98753ceb23d4",
-      "short": "bfeb778",
-      "date": "2026-11-07T11:49:16+04:00",
-      "subject": "Record publishing results for session 1",
-      "project": "security-engineering-portfolio",
-      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/bfeb7781d4675ae22f77e3f5178e98753ceb23d4"
+      "sha": "2f766a102bf4b574ee42a879488f24edc7d82d7f",
+      "short": "2f766a1",
+      "date": "2026-11-07T17:08:23+04:00",
+      "subject": "Add DNS tunnelling and NXDOMAIN (DGA) detection",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/2f766a102bf4b574ee42a879488f24edc7d82d7f"
     },
     {
-      "sha": "24290b41096cfe4d834ee88eeee7c60c8411a7a3",
-      "short": "24290b4",
+      "sha": "ee42ddcbd420c3dccc1c89086b07b73e6b9eba38",
+      "short": "ee42ddc",
+      "date": "2026-11-07T12:12:16+04:00",
+      "subject": "Record publishing results for session 1",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/ee42ddcbd420c3dccc1c89086b07b73e6b9eba38"
+    },
+    {
+      "sha": "405c8a31d23ce7ff84b6a669be3382824e72cfac",
+      "short": "405c8a3",
       "date": "2026-11-07T11:34:29+04:00",
       "subject": "Set up portfolio tracking system and dashboard",
       "project": "security-engineering-portfolio",
-      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/24290b41096cfe4d834ee88eeee7c60c8411a7a3"
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/405c8a31d23ce7ff84b6a669be3382824e72cfac"
     },
     {
-      "sha": "0ca25010893450a7a71224bc06385294efb5a4d3",
-      "short": "0ca2501",
+      "sha": "e22a6033850844de8ade43658cc2026b5d0fa830",
+      "short": "e22a603",
       "date": "2026-11-07T11:28:00+04:00",
       "subject": "Add PCAP reader, flow summary and TCP port-scan detection",
       "project": "pcap-triage",
-      "url": "https://github.com/Hiresh2007/pcap-triage/commit/0ca25010893450a7a71224bc06385294efb5a4d3"
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/e22a6033850844de8ade43658cc2026b5d0fa830"
     },
     {
       "sha": "939580648835d60cecedb6e941305a59c4835723",
@@ -254,6 +268,48 @@
     {
       "concept": "CI with GitHub Actions test matrix",
       "area": "Security Automation",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "DNS message structure: question, QR flag, rcode (NOERROR / NXDOMAIN)",
+      "area": "Network Traffic Analysis",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "DNS tunnelling and exfiltration via subdomain labels",
+      "area": "Threat Intelligence",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Shannon entropy as a randomness signal, and its limits on short strings",
+      "area": "Detection Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Domain generation algorithms (DGA) and NXDOMAIN bursts",
+      "area": "Threat Intelligence",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Registered domains vs public suffixes (example.co.uk)",
+      "area": "Network Security",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Terminal escape injection from untrusted input",
+      "area": "Python Security Engineering",
+      "introduced": "2026-11-07",
+      "status": "introduced"
+    },
+    {
+      "concept": "Regression tests that pin a threshold decision",
+      "area": "Detection Engineering",
       "introduced": "2026-11-07",
       "status": "introduced"
     }
@@ -369,7 +425,7 @@
     },
     {
       "project": "pcap-triage",
-      "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)"
+      "text": "DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002). Implemented and tested in pcap-triage PR #1, awaiting merge"
     },
     {
       "project": "pcap-triage",
@@ -408,16 +464,32 @@
     {
       "date": "2026-11-07",
       "text": "Scapy needs no libpcap/Npcap to read or write capture files, but building ARP() / Ether() without explicit MACs makes it resolve a local interface, which fails on Windows without Npcap. Tests set MACs explicitly."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "Headless Edge screenshots do not advance SMIL animation clocks reliably for SVGs in <img>; seeking with pauseAnimations() / setCurrentTime() gives exact frames."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "GitHub Actions runs that push to the same branch race; a concurrency group queues them."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "DNS labels can carry arbitrary bytes, including terminal escape sequences; tools that print query names should escape them."
+    },
+    {
+      "date": "2026-11-07",
+      "text": "Hex-encoded plain text averages ~3.2\u20133.35 bits/char of Shannon entropy, random hex ~3.9 (max 4.0). A 3.5 threshold misses realistic DNS exfiltration; pcap-triage uses 3.0 plus length and unique-count conditions."
     }
   ],
   "testing": [
     {
       "project": "pcap-triage",
       "date": "2026-11-07",
-      "passed": 26,
+      "passed": 57,
       "failed": 0,
       "lint": "pass",
-      "ci": "pass (GitHub Actions, Python 3.10-3.13)"
+      "ci": "pass (PR #1, Python 3.10-3.13)"
     }
   ]
 }

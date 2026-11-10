@@ -2,6 +2,18 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-07 — Session 2 ([journal](journal/2026-11-07-2.md))
+
+- **pcap-triage PR #1 (v0.2.0):** DNS tunnelling (T1071.004) and NXDOMAIN/DGA
+  (T1568.002) detectors; reader DNS parsing with malformed-payload handling and
+  escaping of control bytes; CLI flags; demo capture with 4 findings; 31 new
+  tests (57 total), CI green on 3.10–3.13.
+- **Threshold fix during development:** entropy 3.5 → 3.0 after finding that
+  hex-encoded text averages ~3.2–3.35 bits/char; regression test added.
+- **Profile PR #1:** workflow concurrency group to stop asset-build races.
+- **Dashboard:** several journal files per day (`YYYY-MM-DD-N.md`), ordering
+  bug found by the new test and fixed; 7 tests.
+
 ## 2026-11-07 — Session 1 ([journal](journal/2026-11-07.md))
 
 - **Audit:** 47 public repos via the GitHub API; no security engineering code yet.

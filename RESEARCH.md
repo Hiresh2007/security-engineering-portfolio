@@ -35,6 +35,10 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
 
 ## Discoveries
 
+- 2026-11-07 — Hex-encoded plain text averages ~3.2–3.35 bits/char of Shannon entropy, random hex ~3.9 (max 4.0). A 3.5 threshold misses realistic DNS exfiltration; pcap-triage uses 3.0 plus length and unique-count conditions.
+- 2026-11-07 — DNS labels can carry arbitrary bytes, including terminal escape sequences; tools that print query names should escape them.
+- 2026-11-07 — GitHub Actions runs that push to the same branch race; a `concurrency` group queues them.
+- 2026-11-07 — Headless Edge screenshots do not advance SMIL animation clocks reliably for SVGs in `<img>`; seeking with `pauseAnimations()` / `setCurrentTime()` gives exact frames.
 - 2026-11-07 — Scapy needs no libpcap/Npcap to read or write capture files, but building `ARP()` / `Ether()` without explicit MACs makes it resolve a local interface, which fails on Windows without Npcap. Tests set MACs explicitly.
 - 2026-11-07 — On a `slots=True` dataclass, `Cls.field` is a slot descriptor rather than the default value. Read defaults from an instance.
 - 2026-11-07 — secdev/scapy's CONTRIBUTING requires an `AI-Assisted: yes/no (tool)` trailer on every commit, adapted from Wireshark's AI policy.

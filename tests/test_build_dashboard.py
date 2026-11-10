@@ -55,3 +55,18 @@ def test_build_offline_on_real_repo_files():
     assert data["overview"]["projects"] == len(data["projects"])
     assert all(s["date"] for s in data["sessions"])
     assert data["overview"]["concepts"] == len(data["learning"]) > 0
+
+
+def test_journal_accepts_multiple_sessions_per_day(tmp_path):
+    files = [
+        ("2026-11-07-10.md", "ten"),
+        ("2026-11-07-2.md", "two"),
+        ("2026-11-07.md", "one"),
+        ("2026-11-08.md", "next day"),
+    ]
+    for name, objective in files:
+        (tmp_path / name).write_text(f"---\ndate: 2026-11-07\nobjective: {objective}\n---\n")
+    for junk in ("notes.md", "2026-11-07-draft.md"):  # not journal files
+        (tmp_path / junk).write_text("---\ndate: x\nobjective: junk\n---\n")
+    sessions = bd.load_journal(tmp_path)
+    assert [s["objective"] for s in sessions] == ["one", "two", "ten", "next day"]
