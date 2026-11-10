@@ -35,6 +35,9 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
 
 ## Discoveries
 
+- 2026-11-10 — SigmaHQ CI pins `pySigma-validators-sigmahq==0.21.*`; the latest 0.30.0 reports 55 extra issues (UUID v1 rule ids) on upstream main. Validate locally with the pinned version.
+- 2026-11-10 — Sigma rule `Suspicious DNS Query with B64 Encoded String` matched only `==.`, missing single-padded base64 (one third of encodings). Fix prepared locally.
+- 2026-11-10 — SigmaHQ/sigma triages fast (2 unassigned open issues in the whole tracker); first contributions are more likely found by reviewing rules in a familiar area.
 - 2026-11-09 — Uniform ±j jitter gives a MAD of about j/2 of the interval; a 0.2 MAD/median threshold catches ±30 % jitter 96 % of the time and ±40 % only 70 %.
 - 2026-11-09 — False positives of interval-regularity tests on irregular traffic fall with event count (2.5 % at 8 events, 0 % at 30 in 200 trials): minimum event count is the main precision control.
 - 2026-11-07 — Hex-encoded plain text averages ~3.2–3.35 bits/char of Shannon entropy, random hex ~3.9 (max 4.0). A 3.5 threshold misses realistic DNS exfiltration; pcap-triage uses 3.0 plus length and unique-count conditions.

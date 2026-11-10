@@ -29,11 +29,12 @@ Phase 3: usability (v0.3)
 
 ## sigma
 
-- [ ] Fork SigmaHQ/sigma, set up sigma-cli and run `tests/test_rules.py` locally
-- [ ] Read rule creation guide and 10 existing rules in one log-source family
-- [ ] Find a reproducible false-positive or missing-field issue to fix
-- [ ] Test the change locally (Windows VM + Sysmon where log evidence is needed)
-- [ ] Open the first PR with evidence and references
+- [x] Set up sigma-cli locally and validate the full rule set with CI's pinned validators
+- [ ] Fork SigmaHQ/sigma
+- [x] Read rule creation guide and the DNS rule family
+- [x] Find a reproducible issue to fix (DNS base64 rule misses single padding)
+- [x] Test the change locally (sigma check, CI validator version)
+- [ ] Open the first PR with evidence and references (prepared in contributions/, awaiting approval)
 
 ## cybersecurity-journey
 
