@@ -2,6 +2,11 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-11 — Session 5 ([journal](journal/2026-11-11.md))
+
+- **pcap-triage PR #4:** TOML allow-lists with mandatory reasons, strict
+  validation and audited suppression; 19 new tests (96 total), CI green.
+
 ## 2026-11-10 — Session 4 ([journal](journal/2026-11-10.md))
 
 - **Merges (approved):** pcap-triage v0.2.0 on `main` (DNS + beaconing), portfolio

@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-10T09:12:17+00:00",
+  "generated_at": "2026-11-11T13:03:09+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 4,
+    "sessions": 5,
     "commits": 13,
-    "concepts": 25,
+    "concepts": 27,
     "milestones_done": 14,
     "milestones_total": 26
   },
@@ -105,6 +105,12 @@
     }
   ],
   "sessions": [
+    {
+      "date": "2026-11-11",
+      "project": "pcap-triage",
+      "objective": "Per-detector allow-lists with mandatory reasons (pcap-triage v0.3)",
+      "file": "journal/2026-11-11.md"
+    },
     {
       "date": "2026-11-10",
       "project": "SigmaHQ/sigma",
@@ -400,6 +406,18 @@
       "area": "SOC Engineering",
       "introduced": "2026-11-10",
       "status": "introduced"
+    },
+    {
+      "concept": "Alert suppression and allow-list hygiene (reasons, auditability, fail-closed parsing)",
+      "area": "SOC Engineering",
+      "introduced": "2026-11-11",
+      "status": "introduced"
+    },
+    {
+      "concept": "CIDR matching with Python ipaddress",
+      "area": "Network Security",
+      "introduced": "2026-11-11",
+      "status": "introduced"
     }
   ],
   "stack": [
@@ -613,11 +631,11 @@
   "testing": [
     {
       "project": "pcap-triage",
-      "date": "2026-11-09",
-      "passed": 77,
+      "date": "2026-11-11",
+      "passed": 96,
       "failed": 0,
       "lint": "pass",
-      "ci": "pass (PR #2, Python 3.10-3.13)"
+      "ci": "pass (PR #4, Python 3.10-3.13)"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Project state
 
-_Last updated: 2026-11-10 (session 4, after merges)_
+_Last updated: 2026-11-11 (session 5)_
 
 ## Selected projects
 
@@ -18,6 +18,7 @@ restarted at #1.
 
 ## Last completed tasks
 
+- Session 5: pcap-triage allow-lists (96 tests).
 - Session 4: Sigma setup and validation; first contribution prepared.
 - Session 3: beaconing detector (77 tests), threshold simulation.
 - Session 2: DNS tunnelling + NXDOMAIN detection (57 tests), profile asset
@@ -32,7 +33,10 @@ Local only: `../sigma` branch `rule-update-dns-b64-single-padding` @ `a5f78ab`.
 
 ## Open pull requests
 
-None. Merged on 2026-11-10 with Hiresh's approval: pcap-triage #1 (DNS) and
+- pcap-triage #4: allow-lists (CI green)
+- security-engineering-portfolio #4: state sync + session 5 records
+
+Previously: Merged on 2026-11-10 with Hiresh's approval: pcap-triage #1 (DNS) and
 #3 (beaconing; replaces #2, which GitHub closed when its base branch was
 deleted), portfolio #1–#3, profile #1.
 
@@ -45,6 +49,6 @@ deleted), portfolio #1–#3, profile #1.
 
 ## Pending work
 
-- Per-detector allow-lists / config file (pcap-triage v0.3)
+- UDP / NULL / FIN / Xmas scan detection
 - Sigma: fork and open the prepared PR (needs approval)
 - Pin pcap-triage and security-engineering-portfolio on the profile (manual)

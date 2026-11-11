@@ -22,7 +22,7 @@ Phase 2: more detectors (v0.2)
 - [ ] UDP / NULL / FIN / Xmas scan detection
 
 Phase 3: usability (v0.3)
-- [ ] YAML config file and allow-lists per detector
+- [ ] Allow-lists per detector (TOML, mandatory reasons): implemented and tested in pcap-triage PR #4, awaiting merge
 - [ ] Markdown/HTML report output
 - [ ] Cross-check findings against Suricata `eve.json` from the same capture
 - [ ] Benchmark on a large public capture; document throughput
