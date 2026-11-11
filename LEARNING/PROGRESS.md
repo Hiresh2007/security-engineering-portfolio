@@ -34,6 +34,8 @@ The table below is parsed by the dashboard; keep the column order.
 | Base64 padding (3 bytes -> 4 chars, `=` / `==` remainder) | Network Traffic Analysis | 2026-11-10 | introduced | same |
 | Pinning validator versions to match upstream CI | Security Automation | 2026-11-10 | introduced | journal 2026-11-10 |
 | Open-source contribution etiquette (assigned issues, templates, changelog tags) | SOC Engineering | 2026-11-10 | introduced | same |
+| Alert suppression and allow-list hygiene (reasons, auditability, fail-closed parsing) | SOC Engineering | 2026-11-11 | introduced | pcap-triage `allowlist.py` |
+| CIDR matching with Python `ipaddress` | Network Security | 2026-11-11 | introduced | same |
 
 ## Exercises for Hiresh
 
@@ -64,6 +66,8 @@ Small tasks to turn *introduced* into *practised*. Do them yourself; ask for rev
 10. Base64-encode `a`, `ab` and `abc` (e.g. `python -c "import base64; print(base64.b64encode(b'ab'))"`).
     Explain why the padding is `==`, `=` and nothing, and why changing the Sigma rule from `==.`
     to `=.` doubles what it catches but still misses a third.
+11. Write an allow-list rule for one benign program you found in exercise 9. Then explain
+    what an attacker could do if the rule only set `port = 443`.
 
 ## Exercises completed
 
