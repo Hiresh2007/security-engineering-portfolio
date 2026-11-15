@@ -36,6 +36,8 @@ The table below is parsed by the dashboard; keep the column order.
 | Open-source contribution etiquette (assigned issues, templates, changelog tags) | SOC Engineering | 2026-11-10 | introduced | same |
 | Alert suppression and allow-list hygiene (reasons, auditability, fail-closed parsing) | SOC Engineering | 2026-11-11 | introduced | pcap-triage `allowlist.py` |
 | CIDR matching with Python `ipaddress` | Network Security | 2026-11-11 | introduced | same |
+| NULL / FIN / Xmas scans and RFC 793 closed-port behaviour | Network Security | 2026-11-15 | introduced | `portscan.py` |
+| UDP scanning and ICMP port unreachable (quoted headers) | Network Traffic Analysis | 2026-11-15 | introduced | `reader.py` |
 
 ## Exercises for Hiresh
 
@@ -68,6 +70,9 @@ Small tasks to turn *introduced* into *practised*. Do them yourself; ask for rev
     to `=.` doubles what it catches but still misses a third.
 11. Write an allow-list rule for one benign program you found in exercise 9. Then explain
     what an attacker could do if the rule only set `port = 443`.
+12. In your own VM, capture `nmap -sX -p 1-100 <vm>` and `nmap -sU --top-ports 50 <vm>`.
+    In Wireshark, filter `tcp.flags == 0x029` and `icmp.type == 3 && icmp.code == 3`, then
+    compare with the counts pcap-triage reports.
 
 ## Exercises completed
 

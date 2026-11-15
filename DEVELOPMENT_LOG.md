@@ -2,6 +2,11 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-15 — Session 6 ([journal](journal/2026-11-15.md))
+
+- **pcap-triage PR #5 (stacked on #4):** NULL / FIN / Xmas and UDP scan detection,
+  ICMP quoted-port parsing; 8 new tests (104 total), CI green.
+
 ## 2026-11-11 — Session 5 ([journal](journal/2026-11-11.md))
 
 - **pcap-triage PR #4:** TOML allow-lists with mandatory reasons, strict

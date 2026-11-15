@@ -19,7 +19,7 @@ Phase 2: more detectors (v0.2)
 - [x] Beaconing detector: low-jitter periodic connections (T1071)
 - [ ] ARP spoofing detector: IP-to-MAC binding changes (T1557.002)
 - [ ] Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)
-- [ ] UDP / NULL / FIN / Xmas scan detection
+- [ ] UDP / NULL / FIN / Xmas scan detection: implemented and tested in pcap-triage PR #5, awaiting merge
 
 Phase 3: usability (v0.3)
 - [ ] Allow-lists per detector (TOML, mandatory reasons): implemented and tested in pcap-triage PR #4, awaiting merge

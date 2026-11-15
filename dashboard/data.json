@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-11T13:03:09+00:00",
+  "generated_at": "2026-11-15T15:16:27+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 5,
+    "sessions": 6,
     "commits": 13,
-    "concepts": 27,
+    "concepts": 29,
     "milestones_done": 14,
     "milestones_total": 26
   },
@@ -105,6 +105,12 @@
     }
   ],
   "sessions": [
+    {
+      "date": "2026-11-15",
+      "project": "pcap-triage",
+      "objective": "NULL, FIN, Xmas and UDP port scan detection",
+      "file": "journal/2026-11-15.md"
+    },
     {
       "date": "2026-11-11",
       "project": "pcap-triage",
@@ -418,6 +424,18 @@
       "area": "Network Security",
       "introduced": "2026-11-11",
       "status": "introduced"
+    },
+    {
+      "concept": "NULL / FIN / Xmas scans and RFC 793 closed-port behaviour",
+      "area": "Network Security",
+      "introduced": "2026-11-15",
+      "status": "introduced"
+    },
+    {
+      "concept": "UDP scanning and ICMP port unreachable (quoted headers)",
+      "area": "Network Traffic Analysis",
+      "introduced": "2026-11-15",
+      "status": "introduced"
     }
   ],
   "stack": [
@@ -631,11 +649,11 @@
   "testing": [
     {
       "project": "pcap-triage",
-      "date": "2026-11-11",
-      "passed": 96,
+      "date": "2026-11-15",
+      "passed": 104,
       "failed": 0,
       "lint": "pass",
-      "ci": "pass (PR #4, Python 3.10-3.13)"
+      "ci": "pass (PR #5, Python 3.10-3.13)"
     }
   ]
 }

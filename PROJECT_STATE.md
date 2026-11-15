@@ -1,6 +1,6 @@
 # Project state
 
-_Last updated: 2026-11-11 (session 5)_
+_Last updated: 2026-11-15 (session 6)_
 
 ## Selected projects
 
@@ -18,6 +18,7 @@ restarted at #1.
 
 ## Last completed tasks
 
+- Session 6: NULL / FIN / Xmas / UDP scan detection (104 tests).
 - Session 5: pcap-triage allow-lists (96 tests).
 - Session 4: Sigma setup and validation; first contribution prepared.
 - Session 3: beaconing detector (77 tests), threshold simulation.
@@ -34,6 +35,7 @@ Local only: `../sigma` branch `rule-update-dns-b64-single-padding` @ `a5f78ab`.
 ## Open pull requests
 
 - pcap-triage #4: allow-lists (CI green)
+- pcap-triage #5: stealth TCP and UDP scans (stacked on #4, CI green)
 - security-engineering-portfolio #4: state sync + session 5 records
 
 Previously: Merged on 2026-11-10 with Hiresh's approval: pcap-triage #1 (DNS) and
@@ -49,6 +51,6 @@ deleted), portfolio #1–#3, profile #1.
 
 ## Pending work
 
-- UDP / NULL / FIN / Xmas scan detection
+- Cleartext credential detector (HTTP Basic, FTP, Telnet)
 - Sigma: fork and open the prepared PR (needs approval)
 - Pin pcap-triage and security-engineering-portfolio on the profile (manual)
