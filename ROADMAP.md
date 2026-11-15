@@ -19,10 +19,10 @@ Phase 2: more detectors (v0.2)
 - [x] Beaconing detector: low-jitter periodic connections (T1071)
 - [ ] ARP spoofing detector: IP-to-MAC binding changes (T1557.002)
 - [ ] Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)
-- [ ] UDP / NULL / FIN / Xmas scan detection: implemented and tested in pcap-triage PR #5, awaiting merge
+- [x] UDP / NULL / FIN / Xmas scan detection
 
 Phase 3: usability (v0.3)
-- [ ] Allow-lists per detector (TOML, mandatory reasons): implemented and tested in pcap-triage PR #4, awaiting merge
+- [x] Allow-lists per detector (TOML, mandatory reasons)
 - [ ] Markdown/HTML report output
 - [ ] Cross-check findings against Suricata `eve.json` from the same capture
 - [ ] Benchmark on a large public capture; document throughput
@@ -30,11 +30,11 @@ Phase 3: usability (v0.3)
 ## sigma
 
 - [x] Set up sigma-cli locally and validate the full rule set with CI's pinned validators
-- [ ] Fork SigmaHQ/sigma
+- [x] Fork SigmaHQ/sigma
 - [x] Read rule creation guide and the DNS rule family
 - [x] Find a reproducible issue to fix (DNS base64 rule misses single padding)
 - [x] Test the change locally (sigma check, CI validator version)
-- [ ] Open the first PR with evidence and references (prepared in contributions/, awaiting approval)
+- [x] Open the first PR with evidence and references ([SigmaHQ/sigma#6630](https://github.com/SigmaHQ/sigma/pull/6630), open, awaiting review)
 
 ## cybersecurity-journey
 

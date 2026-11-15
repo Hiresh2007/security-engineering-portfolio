@@ -2,6 +2,12 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-15 — after session 6
+
+- Merged (approved): pcap-triage #4 allow-lists, #5 stealth/UDP scans; portfolio #4.
+- Submitted SigmaHQ/sigma#6630 (approved) from fork `Hiresh2007/sigma`. Open, not
+  yet reviewed; upstream CI awaits maintainer approval for a first-time contributor.
+
 ## 2026-11-15 — Session 6 ([journal](journal/2026-11-15.md))
 
 - **pcap-triage PR #5 (stacked on #4):** NULL / FIN / Xmas and UDP scan detection,

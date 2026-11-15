@@ -5,7 +5,7 @@
 | Upstream | [SigmaHQ/sigma](https://github.com/SigmaHQ/sigma) |
 | Rule | `rules/network/dns/net_dns_susp_b64_queries.yml` (id `4153a907-2451-4e4f-a578-c52bb6881432`) |
 | Local branch | `rule-update-dns-b64-single-padding` in `../sigma`, commit `a5f78ab` |
-| Status | Prepared and validated locally. **Not submitted**: fork + PR need Hiresh's approval |
+| Status | Submitted 2026-11-15 as [SigmaHQ/sigma#6630](https://github.com/SigmaHQ/sigma/pull/6630) from fork `Hiresh2007/sigma`. Open, awaiting maintainer review |
 | Prior discussion | None found (issues/PRs searched by rule id and title, 2026-11-10) |
 
 ## The problem

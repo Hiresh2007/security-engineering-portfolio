@@ -9,7 +9,7 @@
       "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling, DGA activity and C2 beaconing.",
       "repo": "Hiresh2007/pcap-triage",
       "local_path": "../pcap-triage",
-      "stage": "v0.2.0 released on main",
+      "stage": "main: v0.2.0 + allow-lists, stealth/UDP scans",
       "areas": [
         "Network Traffic Analysis",
         "Intrusion Detection",
@@ -31,7 +31,7 @@
       "repo": "SigmaHQ/sigma",
       "fork": "Hiresh2007/sigma",
       "local_path": "../sigma",
-      "stage": "First contribution prepared",
+      "stage": "PR #6630 open, awaiting review",
       "areas": [
         "Detection Engineering",
         "SOC Engineering"
