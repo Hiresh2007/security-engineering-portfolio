@@ -2,8 +2,22 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-15 — Session 6 ([journal](journal/2026-11-15.md))
+
+- **pcap-triage PR #5 (stacked on #4):** NULL / FIN / Xmas and UDP scan detection,
+  ICMP quoted-port parsing; 8 new tests (104 total), CI green.
+
+## 2026-11-11 — Session 5 ([journal](journal/2026-11-11.md))
+
+- **pcap-triage PR #4:** TOML allow-lists with mandatory reasons, strict
+  validation and audited suppression; 19 new tests (96 total), CI green.
+
 ## 2026-11-10 — Session 4 ([journal](journal/2026-11-10.md))
 
+- **Merges (approved):** pcap-triage v0.2.0 on `main` (DNS + beaconing), portfolio
+  sessions 2–4, profile build concurrency. Deleting a stacked PR's base branch
+  closed pcap-triage #2; reopened as #3 after merging `main` into the branch
+  (resolved trees verified identical to the reviewed branch).
 - **Sigma setup:** local clone and sigma-cli; the full rule set validates with
   0 issues under CI's pinned validators (55 with the latest, all UUID v1 ids).
 - **Contribution prepared:** DNS base64 rule `==.` -> `=.` to cover single

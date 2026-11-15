@@ -6,10 +6,10 @@
       "id": "pcap-triage",
       "name": "pcap-triage",
       "role": "Flagship",
-      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling and DGA activity.",
+      "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling, DGA activity and C2 beaconing.",
       "repo": "Hiresh2007/pcap-triage",
       "local_path": "../pcap-triage",
-      "stage": "v0.2 in review",
+      "stage": "v0.2.0 released on main",
       "areas": [
         "Network Traffic Analysis",
         "Intrusion Detection",
