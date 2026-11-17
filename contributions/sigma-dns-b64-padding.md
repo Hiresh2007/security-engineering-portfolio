@@ -87,3 +87,51 @@ None
 ### SigmaHQ Rule Creation Conventions
 
 - If your PR adds new rules, please consider following and applying these [conventions](https://github.com/SigmaHQ/sigma-specification/blob/main/sigmahq/)
+
+---
+
+## Review round 1 (2026-11-17)
+
+Reviewer: Varunpoojari (comment review, not a maintainer approval). All 16
+upstream CI checks passed, including `test-sigma-legacy` (the repo's
+`test_rules.py`) and the clean Windows baseline checks.
+
+### Questions and evidence
+
+**1. Checked against benign DNS data?**
+Cisco Umbrella Top 1M (downloaded 2026-11-17; the most-queried DNS names
+on OpenDNS, including full hostnames such as CDN and tracking subdomains):
+1,000,000 names, **0 contain `=` anywhere**, so 0 matches for both `==.` and
+`=.`. Caveat: a popularity list may drop malformed names, so this shows
+normal traffic does not contain `=`, not that unusual traffic never does.
+
+**2. Description / what was tested.**
+Prepared locally (commit `1046bb9`, not pushed): description now says the
+rule matches a base64 label ending with one or two padding characters;
+`modified` updated. `falsepositives: Unknown` left as is: no benign source was
+found, and naming an invented one would be worse.
+
+**3. Real sample?**
+The rule's own reference, `krmaxwell/dns-exfiltration`, encodes
+`struct.pack('L8s', part, data)`: 16 bytes on 64-bit Linux (`==` padding,
+which is why the rule used `==.`), but 12 bytes on Windows / 32-bit (**no
+padding**). Padding depends only on payload length, and tools use fixed
+chunk sizes, so a tool's queries all share one padding. A tool whose payload
+length is 2 mod 3 (e.g. 14 or 17 bytes) produces `=` on *every* query and was
+never detected by `==.`, not just one query in three.
+
+### Draft reply (rewrite in your own words before posting)
+
+> Thanks for the review. On your points:
+>
+> 1. I checked the Cisco Umbrella Top 1M list (1M most-queried names incl.
+>    CDN/tracking hostnames): none contain `=` at all, so neither pattern
+>    matches anything there. A popularity list may filter malformed names, so
+>    I can't rule out odd sources, but `=` isn't valid in hostnames (RFC 1123).
+> 2. I've updated the description to mention one or two padding characters.
+>    I left `falsepositives` as Unknown since I didn't find a benign source.
+> 3. No live sample, but the rule's reference tool shows why it matters:
+>    padding depends only on payload length, and tools use a fixed chunk size,
+>    so a tool sending 14- or 17-byte chunks ends every label with a single `=`
+>    and was never matched by `==.`. (The reference tool itself packs 16 bytes
+>    on 64-bit Linux, hence `==`, and 12 bytes on Windows, with no padding.)
