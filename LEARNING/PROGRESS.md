@@ -1,7 +1,7 @@
 # Learning progress
 
 Status meanings: **introduced** = seen and explained in a session;
-**practised** = Hiresh has used it independently (exercise or own change);
+**practised** = used without help (exercise or own change);
 **needs revision** = revisit. Nothing is marked mastered. Code that exists in a
 project but has not been reproduced independently counts as *introduced* only.
 
@@ -39,17 +39,17 @@ The table below is parsed by the dashboard; keep the column order.
 | NULL / FIN / Xmas scans and RFC 793 closed-port behaviour | Network Security | 2026-11-15 | introduced | `portscan.py` |
 | UDP scanning and ICMP port unreachable (quoted headers) | Network Traffic Analysis | 2026-11-15 | introduced | `reader.py` |
 
-## Exercises for Hiresh
+## Exercises
 
-Small tasks to turn *introduced* into *practised*. Do them yourself; ask for review afterwards.
+Small tasks to turn *introduced* into *practised*.
 
 1. Open `samples/demo_scan.pcap` in Wireshark. Apply `tcp.flags.syn==1 && tcp.flags.ack==0`
    and confirm the packet count matches `syn_packets` in the JSON report.
-2. Explain in your own words (in `Cybersecurity-Journey`) why a SYN-ACK reply means
+2. Explain (in `Cybersecurity-Journey`) why a SYN-ACK reply means
    *open* and RST means *closed* in a SYN scan.
 3. Change `scripts/make_demo_pcap.py` so the scan probes one port every 5 seconds.
    Predict whether the default 60 s window flags it, then run the tool to check.
-4. In a lab VM you own, run `nmap -sS -p 1-200 <your-vm>` while capturing with
+4. In a lab VM, run `nmap -sS -p 1-200 <lab-vm>` while capturing with
    Wireshark, and analyse the capture with `pcap-triage`.
 5. In Wireshark, open the demo capture and filter `dns.flags.rcode == 3`. Count the
    NXDOMAIN replies and compare with `nxdomain_replies` in the JSON report.
@@ -62,15 +62,15 @@ Small tasks to turn *introduced* into *practised*. Do them yourself; ask for rev
 
 8. Intervals of 60, 61, 59, 60, 300 s: compute the mean, standard deviation, median and
    MAD by hand. Which pair is still describing "every 60 s" after the 300 s outlier?
-9. Name three legitimate programs on your own PC that probably beacon (check Task
-   Manager or `netstat -abon` every minute). How would you allow-list them without
+9. Name three legitimate programs on my own PC that probably beacon (check Task
+   Manager or `netstat -abon` every minute). How can they be allow-listed without
    hiding a real implant?
 10. Base64-encode `a`, `ab` and `abc` (e.g. `python -c "import base64; print(base64.b64encode(b'ab'))"`).
     Explain why the padding is `==`, `=` and nothing, and why changing the Sigma rule from `==.`
     to `=.` doubles what it catches but still misses a third.
-11. Write an allow-list rule for one benign program you found in exercise 9. Then explain
+11. Write an allow-list rule for one benign program found in exercise 9. Then explain
     what an attacker could do if the rule only set `port = 443`.
-12. In your own VM, capture `nmap -sX -p 1-100 <vm>` and `nmap -sU --top-ports 50 <vm>`.
+12. In my own VM, capture `nmap -sX -p 1-100 <vm>` and `nmap -sU --top-ports 50 <vm>`.
     In Wireshark, filter `tcp.flags == 0x029` and `icmp.type == 3 && icmp.code == 3`, then
     compare with the counts pcap-triage reports.
 

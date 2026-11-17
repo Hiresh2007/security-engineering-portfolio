@@ -5,7 +5,7 @@
 | Upstream | [SigmaHQ/sigma](https://github.com/SigmaHQ/sigma) |
 | Rule | `rules/network/dns/net_dns_susp_b64_queries.yml` (id `4153a907-2451-4e4f-a578-c52bb6881432`) |
 | Local branch | `rule-update-dns-b64-single-padding` in `../sigma`, commit `a5f78ab` |
-| Status | Prepared and validated locally. **Not submitted**: fork + PR need Hiresh's approval |
+| Status | Submitted 2026-11-15 as [SigmaHQ/sigma#6630](https://github.com/SigmaHQ/sigma/pull/6630) from fork `Hiresh2007/sigma`. Open, awaiting maintainer review |
 | Prior discussion | None found (issues/PRs searched by rule id and title, 2026-11-10) |
 
 ## The problem
@@ -44,24 +44,12 @@ the change only stops requiring two of them.
   version pinned in upstream CI): 0 errors, 0 issues.
 - Full repository check with the same settings before the change: 0 issues.
 - Not run: `tests/test_rules.py` / `tests/test_logsource.py`. These are code
-  from the cloned repository, and running them was blocked by the local
-  permission policy. Upstream CI runs them on the PR.
-
-## Notes for Hiresh (read before submitting)
-
-- You should be able to explain in your own words why base64 ends in
-  `==`, `=` or nothing (every 3 input bytes become 4 output characters; the
-  remainder is padded). Exercise 10 in `LEARNING/PROGRESS.md`.
-- Reviewer questions are yours to answer. A likely one: "any real-world FP
-  with a single `=`?" Honest answer: none known; `=` is invalid in hostnames;
-  no production DNS logs were available to measure against.
-- Local validator tip: the latest `pySigma-validators-sigmahq` (0.30.0)
-  reports 55 issues on upstream main (UUID v1 rule ids). Upstream CI pins
-  0.21.*, under which there are 0. Use the pinned version.
+  from the cloned repository and were not run locally; upstream CI runs them
+  on the PR (both passed on #6630).
 
 ---
 
-## Draft PR text (Sigma template)
+## PR text as submitted
 
 ### Summary of the Pull Request
 
@@ -87,3 +75,35 @@ None
 ### SigmaHQ Rule Creation Conventions
 
 - If your PR adds new rules, please consider following and applying these [conventions](https://github.com/SigmaHQ/sigma-specification/blob/main/sigmahq/)
+
+---
+
+## Review round 1 (2026-11-17)
+
+Reviewer: Varunpoojari. All 16
+upstream CI checks passed, including `test-sigma-legacy` (the repo's
+`test_rules.py`) and the clean Windows baseline checks.
+
+### Questions and evidence
+
+**1. Checked against benign DNS data?**
+Cisco Umbrella Top 1M (downloaded 2026-11-17; the most-queried DNS names
+on OpenDNS, including full hostnames such as CDN and tracking subdomains):
+1,000,000 names, **0 contain `=` anywhere**, so 0 matches for both `==.` and
+`=.`. Caveat: a popularity list may drop malformed names, so this shows
+normal traffic does not contain `=`, not that unusual traffic never does.
+
+**2. Description / what was tested.**
+Prepared in commit `1046bb9`: description now says the
+rule matches a base64 label ending with one or two padding characters;
+`modified` updated. `falsepositives: Unknown` left as is: no benign source was
+found, and naming an invented one would be worse.
+
+**3. Real sample?**
+The rule's own reference, `krmaxwell/dns-exfiltration`, encodes
+`struct.pack('L8s', part, data)`: 16 bytes on 64-bit Linux (`==` padding,
+which is why the rule used `==.`), but 12 bytes on Windows / 32-bit (**no
+padding**). Padding depends only on payload length, and tools use fixed
+chunk sizes, so a tool's queries all share one padding. A tool whose payload
+length is 2 mod 3 (e.g. 14 or 17 bytes) produces `=` on *every* query and was
+never detected by `==.`, not just one query in three.

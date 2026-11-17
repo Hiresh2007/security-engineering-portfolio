@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-11-15T15:16:27+00:00",
+  "generated_at": "2026-11-17T11:12:16+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
     "projects": 4,
-    "sessions": 6,
-    "commits": 13,
+    "sessions": 7,
+    "commits": 16,
     "concepts": 29,
-    "milestones_done": 14,
+    "milestones_done": 18,
     "milestones_total": 26
   },
   "projects": [
@@ -17,7 +17,7 @@
       "role": "Flagship",
       "summary": "Offline PCAP triage: flow summaries and explainable detections for port scans, DNS tunnelling, DGA activity and C2 beaconing.",
       "repo": "Hiresh2007/pcap-triage",
-      "stage": "v0.2.0 released on main",
+      "stage": "main: v0.2.0 + allow-lists, stealth/UDP scans",
       "areas": [
         "Network Traffic Analysis",
         "Intrusion Detection",
@@ -31,10 +31,10 @@
         "GitHub Actions"
       ],
       "url": "https://github.com/Hiresh2007/pcap-triage",
-      "commit_count": 3,
+      "commit_count": 5,
       "commit_source": "local git",
-      "last_commit": "2026-11-10T13:08:33+04:00",
-      "roadmap_done": 7,
+      "last_commit": "2026-11-15T19:21:12+04:00",
+      "roadmap_done": 9,
       "roadmap_total": 15
     },
     {
@@ -43,7 +43,7 @@
       "role": "Open-source contribution",
       "summary": "Generic detection-rule format used by SOCs. Target: false-positive fixes and rule improvements, validated with the repo's test suite.",
       "repo": "SigmaHQ/sigma",
-      "stage": "First contribution prepared",
+      "stage": "PR #6630 open, awaiting review",
       "areas": [
         "Detection Engineering",
         "SOC Engineering"
@@ -58,14 +58,14 @@
       "commit_count": 0,
       "commit_source": "local git",
       "last_commit": null,
-      "roadmap_done": 4,
+      "roadmap_done": 6,
       "roadmap_total": 6
     },
     {
       "id": "cybersecurity-journey",
       "name": "Cybersecurity-Journey",
       "role": "Supporting",
-      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+). Written by Hiresh.",
+      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+).",
       "repo": "Hiresh2007/Cybersecurity-Journey",
       "stage": "Ongoing notes (days 1-5)",
       "areas": [
@@ -97,14 +97,20 @@
         "GitHub Pages"
       ],
       "url": "https://github.com/Hiresh2007/security-engineering-portfolio",
-      "commit_count": 5,
+      "commit_count": 6,
       "commit_source": "local git",
-      "last_commit": "2026-11-10T13:10:34+04:00",
+      "last_commit": "2026-11-15T19:21:18+04:00",
       "roadmap_done": 3,
       "roadmap_total": 3
     }
   ],
   "sessions": [
+    {
+      "date": "2026-11-17",
+      "project": "SigmaHQ/sigma",
+      "objective": "Answer review on SigmaHQ/sigma#6630 with false-positive evidence",
+      "file": "journal/2026-11-17.md"
+    },
     {
       "date": "2026-11-15",
       "project": "pcap-triage",
@@ -162,9 +168,37 @@
     {
       "date": "2026-11-10",
       "count": 5
+    },
+    {
+      "date": "2026-11-15",
+      "count": 3
     }
   ],
   "recent_commits": [
+    {
+      "sha": "c61150d81297ae2cef3ed6db15e8edf9ea4c0c15",
+      "short": "c61150d",
+      "date": "2026-11-15T19:21:18+04:00",
+      "subject": "Sync project state after v0.2.0; record sessions 5-6",
+      "project": "security-engineering-portfolio",
+      "url": "https://github.com/Hiresh2007/security-engineering-portfolio/commit/c61150d81297ae2cef3ed6db15e8edf9ea4c0c15"
+    },
+    {
+      "sha": "fa255ba36afe7d2903dd5afcb2ebf0af08caae09",
+      "short": "fa255ba",
+      "date": "2026-11-15T19:21:12+04:00",
+      "subject": "Detect NULL, FIN, Xmas and UDP port scans",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/fa255ba36afe7d2903dd5afcb2ebf0af08caae09"
+    },
+    {
+      "sha": "06659718cfd843edacf5683a9deae43a5e391c1f",
+      "short": "0665971",
+      "date": "2026-11-15T19:20:25+04:00",
+      "subject": "Add allow-lists with mandatory reasons and audited suppression",
+      "project": "pcap-triage",
+      "url": "https://github.com/Hiresh2007/pcap-triage/commit/06659718cfd843edacf5683a9deae43a5e391c1f"
+    },
     {
       "sha": "350c0662967188f773c8d14e7b9445d8c4b38418",
       "short": "350c066",
@@ -236,30 +270,6 @@
       "subject": "Update day 4 note tone and add day 5 notes",
       "project": "Cybersecurity-Journey",
       "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/939580648835d60cecedb6e941305a59c4835723"
-    },
-    {
-      "sha": "898b1a986b9cf3d703cc551989c5c9896b80e08c",
-      "short": "898b1a9",
-      "date": "2026-08-10T10:35:47Z",
-      "subject": "Update notes",
-      "project": "Cybersecurity-Journey",
-      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/898b1a986b9cf3d703cc551989c5c9896b80e08c"
-    },
-    {
-      "sha": "31c78cad73f9d07c3baa6c57ff864b4777ae9839",
-      "short": "31c78ca",
-      "date": "2026-07-15T06:19:57Z",
-      "subject": "Update README with project overview",
-      "project": "Cybersecurity-Journey",
-      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/31c78cad73f9d07c3baa6c57ff864b4777ae9839"
-    },
-    {
-      "sha": "02aea95a3a1cd897760cd570475ea08991774dc8",
-      "short": "02aea95",
-      "date": "2026-07-15T06:17:45Z",
-      "subject": "Add day 1 and 2 notes",
-      "project": "Cybersecurity-Journey",
-      "url": "https://github.com/Hiresh2007/Cybersecurity-Journey/commit/02aea95a3a1cd897760cd570475ea08991774dc8"
     }
   ],
   "learning": [
@@ -538,8 +548,20 @@
       "text": "Beaconing detector: low-jitter periodic connections (T1071)"
     },
     {
+      "project": "pcap-triage",
+      "text": "UDP / NULL / FIN / Xmas scan detection"
+    },
+    {
+      "project": "pcap-triage",
+      "text": "Allow-lists per detector (TOML, mandatory reasons)"
+    },
+    {
       "project": "SigmaHQ/sigma",
       "text": "Set up sigma-cli locally and validate the full rule set with CI's pinned validators"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Fork SigmaHQ/sigma"
     },
     {
       "project": "SigmaHQ/sigma",
@@ -552,6 +574,10 @@
     {
       "project": "SigmaHQ/sigma",
       "text": "Test the change locally (sigma check, CI validator version)"
+    },
+    {
+      "project": "SigmaHQ/sigma",
+      "text": "Open the first PR with evidence and references ([SigmaHQ/sigma#6630](https://github.com/SigmaHQ/sigma/pull/6630), open, awaiting review)"
     },
     {
       "project": "security-engineering-portfolio",
@@ -580,14 +606,6 @@
       "text": "Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)"
     },
     {
-      "project": "SigmaHQ/sigma",
-      "text": "Fork SigmaHQ/sigma"
-    },
-    {
-      "project": "SigmaHQ/sigma",
-      "text": "Open the first PR with evidence and references (prepared in contributions/, awaiting approval)"
-    },
-    {
       "project": "Cybersecurity-Journey",
       "text": "Continue daily notes"
     },
@@ -597,10 +615,6 @@
     }
   ],
   "discoveries": [
-    {
-      "date": "2026-11-07",
-      "text": "secdev/scapy's CONTRIBUTING requires an AI-Assisted: yes/no (tool) trailer on every commit, adapted from Wireshark's AI policy."
-    },
     {
       "date": "2026-11-07",
       "text": "On a slots=True dataclass, Cls.field is a slot descriptor rather than the default value. Read defaults from an instance."
