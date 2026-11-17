@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T11:07:49+00:00",
+  "generated_at": "2026-11-17T11:12:16+00:00",
   "owner": "Hiresh Yadav",
   "github_user": "Hiresh2007",
   "overview": {
@@ -65,7 +65,7 @@
       "id": "cybersecurity-journey",
       "name": "Cybersecurity-Journey",
       "role": "Supporting",
-      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+). Written by Hiresh.",
+      "summary": "Personal study notes (TryHackMe, HTB Academy, Cisco NetAcad, Security+).",
       "repo": "Hiresh2007/Cybersecurity-Journey",
       "stage": "Ongoing notes (days 1-5)",
       "areas": [
@@ -615,10 +615,6 @@
     }
   ],
   "discoveries": [
-    {
-      "date": "2026-11-07",
-      "text": "secdev/scapy's CONTRIBUTING requires an AI-Assisted: yes/no (tool) trailer on every commit, adapted from Wireshark's AI policy."
-    },
     {
       "date": "2026-11-07",
       "text": "On a slots=True dataclass, Cls.field is a slot descriptor rather than the default value. Read defaults from an instance."

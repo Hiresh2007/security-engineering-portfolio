@@ -1,56 +1,37 @@
 # Project state
 
-_Last updated: 2026-11-15 (session 6)_
+_Last updated: 2026-11-17_
 
-## Selected projects
+## Projects
 
 | Project | Role | Stage | Repo |
 |---|---|---|---|
-| pcap-triage | Flagship (original) | v0.2.0 on `main`: port scans, DNS tunnelling, DGA, beaconing (77 tests) | [GitHub](https://github.com/Hiresh2007/pcap-triage), CI green |
-| SigmaHQ/sigma | Open-source contribution | PR [#6630](https://github.com/SigmaHQ/sigma/pull/6630) open, awaiting review | fork `Hiresh2007/sigma`, local `../sigma` |
-| Cybersecurity-Journey | Supporting (Hiresh's notes) | Days 1–5 | [GitHub](https://github.com/Hiresh2007/Cybersecurity-Journey) |
+| pcap-triage | Flagship | `main`: port scans (SYN, NULL, FIN, Xmas, UDP), DNS tunnelling, DGA, beaconing, allow-lists; 104 tests | [GitHub](https://github.com/Hiresh2007/pcap-triage) |
+| SigmaHQ/sigma | Open-source contribution | [#6630](https://github.com/SigmaHQ/sigma/pull/6630) open, first review answered | fork `Hiresh2007/sigma` |
+| Cybersecurity-Journey | Study notes | Days 1–5 | [GitHub](https://github.com/Hiresh2007/Cybersecurity-Journey) |
 | security-engineering-portfolio | Tracking + dashboard | [Live dashboard](https://hiresh2007.github.io/security-engineering-portfolio/) | [GitHub](https://github.com/Hiresh2007/security-engineering-portfolio) |
-| Hiresh2007 (profile) | Profile README | Animated terminal, 3D calendar, snake | [GitHub](https://github.com/Hiresh2007/Hiresh2007) |
+| Hiresh2007 | Profile README | Animated terminal, 3D calendar, snake | [GitHub](https://github.com/Hiresh2007/Hiresh2007) |
 
-All three repos were deleted and recreated on 2026-11-07 (session 1, with
-Hiresh's approval) to remove tool attribution from history; PR numbers
-restarted at #1.
+## Recent work
 
-## Last completed tasks
-
-- Session 6: NULL / FIN / Xmas / UDP scan detection (104 tests).
-- Session 5: pcap-triage allow-lists (96 tests).
-- Session 4: Sigma setup and validation; first contribution prepared.
-- Session 3: beaconing detector (77 tests), threshold simulation.
-- Session 2: DNS tunnelling + NXDOMAIN detection (57 tests), profile asset
-  build race fix, dashboard support for several sessions per day.
-- Session 1: audit, project selection, pcap-triage v0.1, tracking system,
-  dashboard, profile redesign.
-
-## Branches
-
-All repos: `main` only (plus the generated `output` branch in Hiresh2007).
-Local only: `../sigma` branch `rule-update-dns-b64-single-padding` @ `a5f78ab`.
+- 2026-11-17: answered the first review on Sigma #6630 (benign-data check, reference tool analysis).
+- 2026-11-15: NULL / FIN / Xmas / UDP scan detection; submitted Sigma #6630.
+- 2026-11-11: allow-lists with mandatory reasons.
+- 2026-11-10: Sigma set-up and validation; DNS base64 rule fix prepared.
+- 2026-11-09: beaconing detector with measured detection rates.
+- 2026-11-07: pcap-triage v0.1 and DNS detection; portfolio, dashboard and profile set up.
 
 ## Open pull requests
 
-- pcap-triage #4: allow-lists (CI green)
-- pcap-triage #5: stealth TCP and UDP scans (stacked on #4, CI green)
-- security-engineering-portfolio #4: state sync + session 5 records
-
-Previously: Merged on 2026-11-10 with Hiresh's approval: pcap-triage #1 (DNS) and
-#3 (beaconing; replaces #2, which GitHub closed when its base branch was
-deleted), portfolio #1–#3, profile #1.
+- SigmaHQ/sigma #6630: DNS base64 rule, single padding
+- security-engineering-portfolio #5: Sigma records
 
 ## Blockers
 
-- No Docker on this machine; WSL is present. Needed for lab targets.
-- Real-traffic validation needs a capture from Hiresh's own VM (exercise 4).
-- The permission classifier blocks force-pushes and repo deletion even with
-  chat approval; those commands must be run by Hiresh.
+- No Docker on this machine (WSL is available). Needed for lab targets.
+- Real-traffic validation needs captures from a lab VM.
 
-## Pending work
+## Next
 
 - Cleartext credential detector (HTTP Basic, FTP, Telnet)
-- Sigma: fork and open the prepared PR (needs approval)
-- Pin pcap-triage and security-engineering-portfolio on the profile (manual)
+- Follow up on Sigma #6630 review

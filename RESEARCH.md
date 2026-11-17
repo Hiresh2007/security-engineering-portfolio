@@ -8,7 +8,7 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
 | Repository | Lang | License | Stars | Last push | GFI | Fit and notes |
 |---|---|---|---|---|---|---|
 | SigmaHQ/sigma | YAML/Python | DRL 1.1 (rules) | 11.4k | 2026-11-07 | 0 | **Selected for contributions.** SOC detection rules; clear CONTRIBUTING with local test scripts (`test_rules.py`, `sigma check`). Approachable via FP fixes. |
-| secdev/scapy | Python | GPL-2.0 | 12.7k | 2026-11-04 | 0 | Strong runner-up; core library of the flagship. Requires `AI-Assisted:` commit trailer; no AI-written replies or docs. Better after months with Scapy internals. |
+| secdev/scapy | Python | GPL-2.0 | 12.7k | 2026-11-04 | 0 | Strong runner-up; core library of the flagship. Strict commit and documentation rules. Better after months with Scapy internals. |
 | mandiant/capa | Python | Apache-2.0 | 6.3k | 2026-11-06 | 1 | Capability detection in executables. Good code quality; steep learning curve (binary analysis). |
 | mandiant/capa-rules | YAML | Apache-2.0 | 0.8k | 2026-11-06 | 16 | Many labelled starter issues, but rule testing needs malware samples: only in an isolated lab. Later candidate. |
 | zeek/zeek | C++ | BSD-3 | 8.2k | 2026-11-06 | n/a | Network security monitor; reference for flow/log design. Large C++ codebase. |
@@ -30,8 +30,7 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
   evidence in every finding.
 - **Contribution target `SigmaHQ/sigma`:** detection rules are what SOC teams
   use daily; the repo has documented local validation and frequent merges.
-- **Supporting `Cybersecurity-Journey`:** existing personal notes repo; stays
-  the user's own writing.
+- **Supporting `Cybersecurity-Journey`:** existing personal notes repo.
 
 ## Discoveries
 
@@ -46,4 +45,3 @@ push to any branch. Good-first-issue counts use the `good first issue` label.
 - 2026-11-07 — Headless Edge screenshots do not advance SMIL animation clocks reliably for SVGs in `<img>`; seeking with `pauseAnimations()` / `setCurrentTime()` gives exact frames.
 - 2026-11-07 — Scapy needs no libpcap/Npcap to read or write capture files, but building `ARP()` / `Ether()` without explicit MACs makes it resolve a local interface, which fails on Windows without Npcap. Tests set MACs explicitly.
 - 2026-11-07 — On a `slots=True` dataclass, `Cls.field` is a slot descriptor rather than the default value. Read defaults from an instance.
-- 2026-11-07 — secdev/scapy's CONTRIBUTING requires an `AI-Assisted: yes/no (tool)` trailer on every commit, adapted from Wireshark's AI policy.

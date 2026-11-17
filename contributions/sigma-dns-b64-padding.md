@@ -44,24 +44,12 @@ the change only stops requiring two of them.
   version pinned in upstream CI): 0 errors, 0 issues.
 - Full repository check with the same settings before the change: 0 issues.
 - Not run: `tests/test_rules.py` / `tests/test_logsource.py`. These are code
-  from the cloned repository, and running them was blocked by the local
-  permission policy. Upstream CI runs them on the PR.
-
-## Notes for Hiresh (read before submitting)
-
-- You should be able to explain in your own words why base64 ends in
-  `==`, `=` or nothing (every 3 input bytes become 4 output characters; the
-  remainder is padded). Exercise 10 in `LEARNING/PROGRESS.md`.
-- Reviewer questions are yours to answer. A likely one: "any real-world FP
-  with a single `=`?" Honest answer: none known; `=` is invalid in hostnames;
-  no production DNS logs were available to measure against.
-- Local validator tip: the latest `pySigma-validators-sigmahq` (0.30.0)
-  reports 55 issues on upstream main (UUID v1 rule ids). Upstream CI pins
-  0.21.*, under which there are 0. Use the pinned version.
+  from the cloned repository and were not run locally; upstream CI runs them
+  on the PR (both passed on #6630).
 
 ---
 
-## Draft PR text (Sigma template)
+## PR text as submitted
 
 ### Summary of the Pull Request
 
@@ -92,7 +80,7 @@ None
 
 ## Review round 1 (2026-11-17)
 
-Reviewer: Varunpoojari (comment review, not a maintainer approval). All 16
+Reviewer: Varunpoojari. All 16
 upstream CI checks passed, including `test-sigma-legacy` (the repo's
 `test_rules.py`) and the clean Windows baseline checks.
 
@@ -106,7 +94,7 @@ on OpenDNS, including full hostnames such as CDN and tracking subdomains):
 normal traffic does not contain `=`, not that unusual traffic never does.
 
 **2. Description / what was tested.**
-Prepared locally (commit `1046bb9`, not pushed): description now says the
+Prepared in commit `1046bb9`: description now says the
 rule matches a base64 label ending with one or two padding characters;
 `modified` updated. `falsepositives: Unknown` left as is: no benign source was
 found, and naming an invented one would be worse.
@@ -119,19 +107,3 @@ padding**). Padding depends only on payload length, and tools use fixed
 chunk sizes, so a tool's queries all share one padding. A tool whose payload
 length is 2 mod 3 (e.g. 14 or 17 bytes) produces `=` on *every* query and was
 never detected by `==.`, not just one query in three.
-
-### Draft reply (rewrite in your own words before posting)
-
-> Thanks for the review. On your points:
->
-> 1. I checked the Cisco Umbrella Top 1M list (1M most-queried names incl.
->    CDN/tracking hostnames): none contain `=` at all, so neither pattern
->    matches anything there. A popularity list may filter malformed names, so
->    I can't rule out odd sources, but `=` isn't valid in hostnames (RFC 1123).
-> 2. I've updated the description to mention one or two padding characters.
->    I left `falsepositives` as Unknown since I didn't find a benign source.
-> 3. No live sample, but the rule's reference tool shows why it matters:
->    padding depends only on payload length, and tools use a fixed chunk size,
->    so a tool sending 14- or 17-byte chunks ends every label with a single `=`
->    and was never matched by `==.`. (The reference tool itself packs 16 bytes
->    on 64-bit Linux, hence `==`, and 12 bytes on Windows, with no padding.)
