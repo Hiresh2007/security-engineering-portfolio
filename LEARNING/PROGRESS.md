@@ -38,6 +38,7 @@ The table below is parsed by the dashboard; keep the column order.
 | CIDR matching with Python `ipaddress` | Network Security | 2026-11-11 | introduced | same |
 | NULL / FIN / Xmas scans and RFC 793 closed-port behaviour | Network Security | 2026-11-15 | introduced | `portscan.py` |
 | UDP scanning and ICMP port unreachable (quoted headers) | Network Traffic Analysis | 2026-11-15 | introduced | `reader.py` |
+| Cleartext protocols and credential exposure (HTTP Basic, FTP, POP3, IMAP, Telnet) | Network Security | 2026-11-25 | introduced | `detectors/cleartext.py` |
 
 ## Exercises
 

@@ -1,6 +1,6 @@
 # Project state
 
-_Last updated: 2026-11-17_
+_Last updated: 2026-11-25_
 
 ## Projects
 
@@ -14,6 +14,7 @@ _Last updated: 2026-11-17_
 
 ## Recent work
 
+- 2026-11-25: cleartext credential detection (PR #6).
 - 2026-11-17: answered the first review on Sigma #6630 (benign-data check, reference tool analysis).
 - 2026-11-15: NULL / FIN / Xmas / UDP scan detection; submitted Sigma #6630.
 - 2026-11-11: allow-lists with mandatory reasons.
@@ -24,7 +25,7 @@ _Last updated: 2026-11-17_
 ## Open pull requests
 
 - SigmaHQ/sigma #6630: DNS base64 rule, single padding
-- security-engineering-portfolio #5: Sigma records
+- pcap-triage #6: cleartext credentials
 
 ## Blockers
 
@@ -33,5 +34,5 @@ _Last updated: 2026-11-17_
 
 ## Next
 
-- Cleartext credential detector (HTTP Basic, FTP, Telnet)
+- Markdown/HTML report output
 - Follow up on Sigma #6630 review

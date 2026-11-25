@@ -18,7 +18,7 @@ Phase 2: more detectors (v0.2)
 - [x] DNS anomaly detector: long / high-entropy query names, high NXDOMAIN rate (T1071.004, T1568.002)
 - [x] Beaconing detector: low-jitter periodic connections (T1071)
 - [ ] ARP spoofing detector: IP-to-MAC binding changes (T1557.002)
-- [ ] Cleartext credential detector: HTTP Basic, FTP USER/PASS, Telnet (T1040 context)
+- [ ] Cleartext credential detector: HTTP Basic, FTP, POP3, IMAP, Telnet (in PR #6)
 - [x] UDP / NULL / FIN / Xmas scan detection
 
 Phase 3: usability (v0.3)

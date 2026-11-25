@@ -2,6 +2,11 @@
 
 Newest first. Each entry links to its journal file.
 
+## 2026-11-25 ([journal](journal/2026-11-25.md))
+
+- pcap-triage PR #6: cleartext credential detection (HTTP Basic, FTP, POP3, IMAP,
+  Telnet); passwords never reported; 112 tests, CI green.
+
 ## 2026-11-15 (merges)
 
 - Merged pcap-triage #4 allow-lists, #5 stealth/UDP scans; portfolio #4.
